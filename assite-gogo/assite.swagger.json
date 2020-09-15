@@ -1,0 +1,5136 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "assite.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/code/list": {
+            "post": {
+                "summary": "获取地区代码",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListCountryCodeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListCountryCodeRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/coin/list": {
+            "post": {
+                "summary": "获取系统已经支持支持的Coin列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListCoinInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListCoinInfoRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/forget/pass": {
+            "post": {
+                "summary": "忘记密码",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ForgetPassResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ForgetPassRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "登录",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.LoginResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.LoginRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/logout": {
+            "post": {
+                "summary": "登出",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.LogoutResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.LogoutRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/regist": {
+            "post": {
+                "summary": "注册 新增一用户、一账户",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RegisterResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RegisterRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/regist/active": {
+            "post": {
+                "summary": "激活 激活码内有操作符：1 激活、2 改密码、3 改2FA；改FA流程第一次调用返回FACode，第二次调用验证FA通过后才能激活",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UserActiveResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UserActiveRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/regist/active/resend": {
+            "post": {
+                "summary": "重新发送一次激活码",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ReSendActivationCodeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ReSendActivationCodeRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/invite": {
+            "post": {
+                "summary": "邀请用户 新增用户，但用户暂时是冻结的，必须激活",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UserInviteResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UserInviteRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/list": {
+            "get": {
+                "summary": "用户列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListUserResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "page",
+                        "description": "分页",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "page_size",
+                        "description": "每页记录数",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/me": {
+            "get": {
+                "summary": "获取登录用户自己的信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetMeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/me/2fa/reset": {
+            "post": {
+                "summary": "立即重置自己的2FA, 第一次调用返回FACode,第二次调用验证通过才能重置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ResetMe2FAResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ResetMe2FARequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/me/pass/reset": {
+            "post": {
+                "summary": "立即重置自己的密码",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ResetMePassResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ResetMePassRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/me/pass/verify": {
+            "post": {
+                "summary": "验证自己的密码",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.VerifyMePassResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.VerifyMePassRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/me/update": {
+            "post": {
+                "summary": "更新登录用户自己的信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateMeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateMeRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/other/2fa/reset": {
+            "post": {
+                "summary": "/user/other/2fa/reset",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ApplyResetOther2FAResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ApplyResetOther2FARequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/other/info/update": {
+            "post": {
+                "summary": "更新用户一般信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateOtherUserGenericInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateOtherUserGenericInfoRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/other/pass/reset": {
+            "post": {
+                "summary": "/user/other/pass/reset",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ApplyResetOtherPassResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ApplyResetOtherPassRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/other/role/update": {
+            "post": {
+                "summary": "给用户分配权限/冻结/解冻",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateOtherUserImportantInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateOtherUserImportantInfoRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/user/role/perm/list": {
+            "get": {
+                "summary": "获取角色/权限列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListRoleAndPermissionResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/add": {
+            "post": {
+                "summary": "新增钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddWalletRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/api/key/add": {
+            "post": {
+                "summary": "添加API_KEY",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddApiKeyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddApiKeyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/api/key/delete": {
+            "post": {
+                "summary": "删除API_KEY",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.DeleteApiKeyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.DeleteApiKeyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/api/key/list": {
+            "get": {
+                "summary": "获取API_KEY列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListApiKeyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "walletId",
+                        "description": "钱包id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/api/key/update": {
+            "post": {
+                "summary": "更新API_KEY",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateApiKeyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateApiKeyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/asset/get": {
+            "post": {
+                "summary": "获取钱包coin信息及资产余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetWalletAssetResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.GetWalletAssetRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/asset/list": {
+            "post": {
+                "summary": "获取钱包资产余额列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWalletAssetResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWalletAssetRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/add": {
+            "post": {
+                "summary": "钱包添加coin",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddWalletCoinRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/address/add": {
+            "post": {
+                "summary": "钱包申请新地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetNewAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.GetNewAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/address/check": {
+            "post": {
+                "summary": "验证指定coin的地址是否合法有效",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.CheckAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.CheckAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/address/exist": {
+            "post": {
+                "summary": "验证钱包指定coin的地址是否存在",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.HasAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.HasAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/address/hide": {
+            "post": {
+                "summary": "钱包隐藏地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.HideAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.HideAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/address/list": {
+            "post": {
+                "summary": "获取钱包指定coin的所有地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/delete": {
+            "post": {
+                "summary": "钱包删除Coin",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RemoveWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RemoveWalletCoinRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/detail/list": {
+            "post": {
+                "summary": "获取钱包详情列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWalletCoinDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWalletCoinDetailRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/fee": {
+            "post": {
+                "summary": "获取coin当前的最佳手续费率",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetCoinFeeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.GetCoinFeeRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/list": {
+            "post": {
+                "summary": "获取钱包已添加的Coin列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWalletCoinRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/policy/list": {
+            "post": {
+                "summary": "获取钱包Coin策略参数设置列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWithdrawPolicyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWithdrawPolicyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/policy/update": {
+            "post": {
+                "summary": "更新钱包Coin策略参数",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateWithdrawPolicyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateWithdrawPolicyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/add": {
+            "post": {
+                "summary": "添加钱包Coin参数设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/delete": {
+            "post": {
+                "summary": "移除钱包Coin参数设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RemoveWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RemoveWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/get": {
+            "post": {
+                "summary": "获取钱包Coin参数设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.GetWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/quota/add": {
+            "post": {
+                "summary": "增加钱包Coin提现限额设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddWithdrawQuotaRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/quota/delete": {
+            "post": {
+                "summary": "移除钱包Coin提现限额设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RemoveWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RemoveWithdrawQuotaRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/quota/list": {
+            "post": {
+                "summary": "获取钱包Coin提现限额设置列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWithdrawQuotaRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/update": {
+            "post": {
+                "summary": "更新钱包Coin参数设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/whitelist/add": {
+            "post": {
+                "summary": "增加钱包Coin提现白名单设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddWithdrawWhitelistRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/whitelist/delete": {
+            "post": {
+                "summary": "移除钱包Coin提现白名单设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RemoveWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RemoveWithdrawWhitelistRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/setting/whitelist/list": {
+            "post": {
+                "summary": "获取钱包Coin提现白名单设置列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWithdrawWhitelistRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/tx/export": {
+            "post": {
+                "summary": "导出交易列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ExportCoinTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ExportCoinTxRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/tx/list": {
+            "post": {
+                "summary": "查询交易",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.QueryCoinTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.QueryCoinTxRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/tx/list2": {
+            "post": {
+                "summary": "获取交易列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListCoinTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListCoinTxRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/withdraw/add": {
+            "post": {
+                "summary": "申请提现",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.NewWithdrawResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.NewWithdrawRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/coin/withdraw/tx/get": {
+            "post": {
+                "summary": "获取交易详细信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.GetWithdrawDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.GetWithdrawDetailRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/delete": {
+            "post": {
+                "summary": "移除钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.RemoveWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.RemoveWalletRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/detail/list": {
+            "post": {
+                "summary": "获取钱包详情列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWalletDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWalletDetailRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/list": {
+            "post": {
+                "summary": "获取钱包列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListWalletRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/message/add": {
+            "post": {
+                "summary": "增加推送消息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.AddMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.AddMessageRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/message/list": {
+            "post": {
+                "summary": "获取推送消息列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.ListMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.ListMessageRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/message/update": {
+            "post": {
+                "summary": "更新推送消息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateMessageRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        },
+        "/wallet/update": {
+            "post": {
+                "summary": "更新钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.assite.api.UpdateWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.assite.api.UpdateWalletRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "assite.api.AsSite"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".assite.api.AddApiKeyRequest": {
+            "type": "object",
+            "properties": {
+                "wallet_id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "access_type": {
+                    "type": "integer",
+                    "description": "权限类型：0:查询;1:操作及查询;2:提现、操作及查询。"
+                },
+                "public_key": {
+                    "type": "string",
+                    "description": "用户验签公钥。"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "api用户描述"
+                },
+                "ip_limit": {
+                    "type": "string",
+                    "description": "IP白名单，多个IP用逗号分隔，为空不限制"
+                }
+            },
+            "description": "***************************** API_KEY相关链接。 **************************************************",
+            "required": [
+                "wallet_id",
+                "access_type",
+                "public_key"
+            ]
+        },
+        ".assite.api.AddApiKeyResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.ApiKey"
+                }
+            }
+        },
+        ".assite.api.AddMessageRequest": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.Message"
+                }
+            }
+        },
+        ".assite.api.AddMessageResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".assite.api.AddWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "can_deposit": {
+                    "type": "boolean",
+                    "description": "是否能充值"
+                },
+                "can_withdraw": {
+                    "type": "boolean",
+                    "description": "是否能提现"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.AddWalletCoinResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "钱包Coin id"
+                }
+            }
+        },
+        ".assite.api.AddWalletRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "钱包名称"
+                },
+                "wtype": {
+                    "type": "integer",
+                    "description": "钱包类型 0 hd钱包 1 导入钱包 2 系统钱包"
+                }
+            },
+            "description": "*******************************************************************************",
+            "required": [
+                "name"
+            ]
+        },
+        ".assite.api.AddWalletResponse": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                }
+            }
+        },
+        ".assite.api.AddWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                },
+                "quota_per_tx": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每笔限额"
+                },
+                "quota_per_hour": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每小时限额"
+                },
+                "quota_per_day": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每天限额"
+                },
+                "approved_person": {
+                    "type": "integer",
+                    "description": "需要审核的人数"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.AddWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".assite.api.AddWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "approved_all": {
+                    "type": "boolean",
+                    "description": "审核所有交易"
+                },
+                "withdraw_callback_url": {
+                    "type": "string",
+                    "description": "提现确认回调url"
+                },
+                "transfer_callback_url": {
+                    "type": "string",
+                    "description": "交易回调url"
+                },
+                "is_contain_confirm_num": {
+                    "type": "boolean",
+                    "description": "每增加一个确认数交易是否需要回调"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.AddWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".assite.api.AddWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "memo": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wid",
+                "cid",
+                "address"
+            ]
+        },
+        ".assite.api.AddWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".assite.api.ApplyResetOther2FARequest": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "description": "用户id"
+                }
+            },
+            "required": [
+                "uid"
+            ]
+        },
+        ".assite.api.ApplyResetOther2FAResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ApplyResetOtherPassRequest": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "description": "用户id"
+                }
+            },
+            "required": [
+                "uid"
+            ]
+        },
+        ".assite.api.ApplyResetOtherPassResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.CheckAddressRequest": {
+            "type": "object",
+            "properties": {
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos有用"
+                }
+            },
+            "required": [
+                "cid",
+                "address"
+            ]
+        },
+        ".assite.api.CheckAddressResponse": {
+            "type": "object",
+            "properties": {
+                "valid": {
+                    "type": "boolean",
+                    "description": "是否有效"
+                }
+            }
+        },
+        ".assite.api.DeleteApiKeyRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "API_KEY的id。"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        ".assite.api.DeleteApiKeyResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ExportCoinTxRequest": {
+            "type": "object",
+            "properties": {
+                "file_name": {
+                    "type": "string",
+                    "description": "导出保存的文件名"
+                },
+                "txt": {
+                    "type": "string",
+                    "description": "模糊条件"
+                },
+                "wids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "钱包id"
+                },
+                "cids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "coin id"
+                },
+                "states": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "状态 3 等待审核 11 等待确认 13 成功 14 失败"
+                },
+                "sides": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "类型 1 接收 2 发送"
+                },
+                "begin_block_time": {
+                    "type": "integer",
+                    "description": "时间 起始"
+                },
+                "end_block_time": {
+                    "type": "integer",
+                    "description": "时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                }
+            }
+        },
+        ".assite.api.ExportCoinTxResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "string"
+                }
+            }
+        },
+        ".assite.api.ForgetPassRequest": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                }
+            },
+            "required": [
+                "email"
+            ]
+        },
+        ".assite.api.ForgetPassResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.GetCoinFeeRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.GetCoinFeeResponse": {
+            "type": "object",
+            "properties": {
+                "fee_slow": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "最慢一档手续费"
+                },
+                "fee_middle": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "中间一档手续费"
+                },
+                "fee_fast": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "最快一档手续费"
+                },
+                "limit_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "手续费限额 eth用"
+                },
+                "platform_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "平台费"
+                },
+                "fee_slow_str": {
+                    "type": "string",
+                    "description": "最慢一档手续费"
+                },
+                "fee_middle_str": {
+                    "type": "string",
+                    "description": "中间一档手续费"
+                },
+                "fee_fast_str": {
+                    "type": "string",
+                    "description": "最快一档手续费"
+                },
+                "limit_fee_str": {
+                    "type": "string",
+                    "description": "手续费限额 eth用"
+                },
+                "platform_fee_str": {
+                    "type": "string",
+                    "description": "平台费"
+                }
+            }
+        },
+        ".assite.api.GetMeRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.GetMeResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.UserData"
+                }
+            }
+        },
+        ".assite.api.GetNewAddressRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "label"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.GetNewAddressResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.AddressInfo",
+                    "description": "地址详情"
+                }
+            }
+        },
+        ".assite.api.GetWalletAssetRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.GetWalletAssetResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.WalletAsset"
+                }
+            }
+        },
+        ".assite.api.GetWithdrawDetailRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "request_id": {
+                    "type": "string",
+                    "description": "提现请求id"
+                }
+            },
+            "required": [
+                "wid",
+                "cid",
+                "request_id"
+            ]
+        },
+        ".assite.api.GetWithdrawDetailResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.CoinTx"
+                }
+            }
+        },
+        ".assite.api.GetWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.GetWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting"
+                }
+            }
+        },
+        ".assite.api.HasAddressRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos有用"
+                }
+            },
+            "required": [
+                "wid",
+                "cid",
+                "address"
+            ]
+        },
+        ".assite.api.HasAddressResponse": {
+            "type": "object",
+            "properties": {
+                "exist": {
+                    "type": "boolean",
+                    "description": "是否存在"
+                }
+            }
+        },
+        ".assite.api.HideAddressRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo"
+                }
+            },
+            "required": [
+                "wid",
+                "cid",
+                "address"
+            ]
+        },
+        ".assite.api.HideAddressResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ListAddressRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "指定address"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.ListAddressResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.assite.api.SimpleAddressInfo"
+                    },
+                    "description": "地址列表"
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListApiKeyRequest": {
+            "type": "object",
+            "properties": {
+                "walletId": {
+                    "type": "integer",
+                    "description": "钱包id"
+                }
+            },
+            "required": [
+                "walletId"
+            ]
+        },
+        ".assite.api.ListApiKeyResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.ApiKey"
+                    }
+                }
+            }
+        },
+        ".assite.api.ListCoinInfoRequest": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            }
+        },
+        ".assite.api.ListCoinInfoResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinInfo"
+                    }
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListCoinTxRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "coin id"
+                },
+                "txid": {
+                    "type": "string",
+                    "description": "上链时才有值"
+                },
+                "from_address": {
+                    "type": "string",
+                    "description": "由钱包决定从哪个钱包内的地址转出"
+                },
+                "to_address": {
+                    "type": "string",
+                    "description": "目标地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "toAddress的memo eos用"
+                },
+                "request_id": {
+                    "type": "string",
+                    "description": "提现申请id"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "提现类型 快速提现(钱包内地址互转)/普通提现"
+                },
+                "min_confirmed_num": {
+                    "type": "integer",
+                    "description": "最小确认数"
+                },
+                "min_id": {
+                    "type": "integer",
+                    "description": "cointx.id \u003e= MinId"
+                },
+                "max_id": {
+                    "type": "integer",
+                    "description": "cointx.id \u003c MinId"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "每页大小, 不传则默认为50, 最大也是50"
+                },
+                "begin_block_time": {
+                    "type": "integer",
+                    "description": "cointx.BlockTime \u003e= BeginBlockTime"
+                },
+                "end_block_time": {
+                    "type": "integer",
+                    "description": "cointx.BlockTime \u003c EndBlockTime"
+                },
+                "side": {
+                    "type": "integer",
+                    "description": "充值提现"
+                }
+            }
+        },
+        ".assite.api.ListCoinTxResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinTx"
+                    },
+                    "description": "交易列表"
+                }
+            }
+        },
+        ".assite.api.ListCountryCodeRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ListCountryCodeResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CountryCode"
+                    },
+                    "description": "地区代码列表"
+                }
+            }
+        },
+        ".assite.api.ListMessageRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.ListMessageResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.Message"
+                    }
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListRoleAndPermissionRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ListRoleAndPermissionResponse": {
+            "type": "object",
+            "properties": {
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.RoleItem"
+                    }
+                },
+                "perms": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.AuthItem"
+                    }
+                }
+            }
+        },
+        ".assite.api.ListUserRequest": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            }
+        },
+        ".assite.api.ListUserResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.UserData"
+                    }
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListWalletAssetRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                }
+            }
+        },
+        ".assite.api.ListWalletAssetResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletAsset"
+                    }
+                }
+            }
+        },
+        ".assite.api.ListWalletCoinDetailRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "coin id"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页条数"
+                }
+            }
+        },
+        ".assite.api.ListWalletCoinDetailResponse": {
+            "type": "object",
+            "properties": {
+                "coin_detail": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoinDetail"
+                    },
+                    "description": "coin详情"
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                }
+            }
+        },
+        ".assite.api.ListWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.ListWalletCoinResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoin"
+                    },
+                    "description": "钱包Coin列表"
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListWalletDetailRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".assite.api.ListWalletDetailResponse": {
+            "type": "object",
+            "properties": {
+                "wallet_detail": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletDetail"
+                    }
+                }
+            }
+        },
+        ".assite.api.ListWalletRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页记录数"
+                }
+            }
+        },
+        ".assite.api.ListWalletResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletInfo"
+                    }
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总记录数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "分页"
+                }
+            }
+        },
+        ".assite.api.ListWithdrawPolicyRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.ListWithdrawPolicyResponse": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy"
+                }
+            }
+        },
+        ".assite.api.ListWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.ListWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawQuota"
+                    }
+                }
+            }
+        },
+        ".assite.api.ListWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.ListWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawWhitelist"
+                    }
+                }
+            }
+        },
+        ".assite.api.LoginRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "pass": {
+                    "type": "string",
+                    "description": "密码"
+                },
+                "otp": {
+                    "type": "string",
+                    "description": "2FA"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        ".assite.api.LoginResponse": {
+            "type": "object",
+            "properties": {
+                "session_id": {
+                    "type": "string",
+                    "description": "session id"
+                },
+                "remain_retry_num": {
+                    "type": "integer",
+                    "description": "密码错误重试剩余次数"
+                }
+            }
+        },
+        ".assite.api.LogoutRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.LogoutResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.NewWithdrawRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "从钱包id提现"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "申请提现coin id"
+                },
+                "request_id": {
+                    "type": "string",
+                    "description": "提现申请Id"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "提现地址"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "提现数额"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "交易memo(在某些币种里面也叫tag), 当提现EOS, XRP, IOST等币时，根据情况传入"
+                },
+                "fee_cid": {
+                    "type": "integer",
+                    "description": "手续费coin id"
+                },
+                "fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "手续费"
+                }
+            },
+            "required": [
+                "wid",
+                "cid",
+                "address",
+                "amount"
+            ]
+        },
+        ".assite.api.NewWithdrawResponse": {
+            "type": "object",
+            "properties": {
+                "inner_txid": {
+                    "type": "string"
+                }
+            }
+        },
+        ".assite.api.QueryCoinTxRequest": {
+            "type": "object",
+            "properties": {
+                "txt": {
+                    "type": "string",
+                    "description": "模糊条件"
+                },
+                "wids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "钱包id"
+                },
+                "cids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "coin id"
+                },
+                "states": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "状态 3 等待审核 11 等待确认 13 成功 14 失败"
+                },
+                "sides": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "类型 1 接收 2 发送"
+                },
+                "begin_block_time": {
+                    "type": "integer",
+                    "description": "上链时间 起始"
+                },
+                "end_block_time": {
+                    "type": "integer",
+                    "description": "上链时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "begin_create_at": {
+                    "type": "integer",
+                    "description": "创建时间 起始"
+                },
+                "end_create_at": {
+                    "type": "integer",
+                    "description": "创建时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "begin_update_at": {
+                    "type": "integer",
+                    "description": "更新时间 起始"
+                },
+                "end_update_at": {
+                    "type": "integer",
+                    "description": "更新时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页条数"
+                }
+            }
+        },
+        ".assite.api.QueryCoinTxResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinTx"
+                    },
+                    "description": "交易列表"
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                }
+            }
+        },
+        ".assite.api.ReSendActivationCodeRequest": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                }
+            },
+            "required": [
+                "email"
+            ]
+        },
+        ".assite.api.ReSendActivationCodeResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RegisterRequest": {
+            "type": "object",
+            "properties": {
+                "account_name": {
+                    "type": "string",
+                    "description": "账户名称"
+                },
+                "account_description": {
+                    "type": "string",
+                    "description": "账户描述"
+                },
+                "user_name": {
+                    "type": "string",
+                    "description": "用户名称"
+                },
+                "pass": {
+                    "type": "string",
+                    "description": "密码"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "手机号"
+                },
+                "country_code": {
+                    "type": "string",
+                    "description": "地区代码"
+                }
+            },
+            "required": [
+                "account_name",
+                "user_name",
+                "pass",
+                "email"
+            ]
+        },
+        ".assite.api.RegisterResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RemoveWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        ".assite.api.RemoveWalletCoinResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RemoveWalletRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.RemoveWalletResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RemoveWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id",
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.RemoveWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RemoveWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        ".assite.api.RemoveWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.RemoveWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer"
+                },
+                "cid": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id",
+                "wid",
+                "cid"
+            ]
+        },
+        ".assite.api.RemoveWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.ResetMe2FARequest": {
+            "type": "object",
+            "properties": {
+                "old_two_fa_captcha": {
+                    "type": "string",
+                    "description": "旧2FA验证码"
+                },
+                "new_two_fa_captcha": {
+                    "type": "string",
+                    "description": "新2FA验证码"
+                },
+                "auth_code": {
+                    "type": "string",
+                    "description": "后台授权码,从第一次的ResetMe2FAResponse中获取"
+                }
+            }
+        },
+        ".assite.api.ResetMe2FAResponse": {
+            "type": "object",
+            "properties": {
+                "two_fa_code": {
+                    "type": "string",
+                    "description": "2FA 编码"
+                },
+                "auth_code": {
+                    "type": "string",
+                    "description": "后台授权码"
+                }
+            }
+        },
+        ".assite.api.ResetMePassRequest": {
+            "type": "object",
+            "properties": {
+                "old_pass": {
+                    "type": "string",
+                    "description": "旧密码"
+                },
+                "new_pass": {
+                    "type": "string",
+                    "description": "新密码"
+                }
+            }
+        },
+        ".assite.api.ResetMePassResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.SimpleAddressInfo": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos用"
+                },
+                "creator": {
+                    "type": "string",
+                    "description": "创建者"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".assite.api.UpdateApiKeyRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "API_KEY的id。"
+                },
+                "access_type": {
+                    "type": "integer",
+                    "description": "权限类型：0:查询;1:操作及查询;2:提现、操作及查询。"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "api用户描述"
+                },
+                "ip_limit": {
+                    "type": "string",
+                    "description": "IP白名单，多个IP用逗号分隔，为空不限制"
+                }
+            },
+            "required": [
+                "id",
+                "access_type"
+            ]
+        },
+        ".assite.api.UpdateApiKeyResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateMeRequest": {
+            "type": "object",
+            "properties": {
+                "user_name": {
+                    "type": "string",
+                    "description": "用户名"
+                },
+                "lang": {
+                    "type": "string",
+                    "description": "语言"
+                },
+                "currency": {
+                    "type": "string",
+                    "description": "货币"
+                },
+                "welcome": {
+                    "type": "string",
+                    "description": "防钓鱼码"
+                }
+            }
+        },
+        ".assite.api.UpdateMeResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateMessageRequest": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/.shared.api.Message"
+                }
+            }
+        },
+        ".assite.api.UpdateMessageResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateOtherUserGenericInfoRequest": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "description": "用户id"
+                },
+                "user_name": {
+                    "type": "string",
+                    "description": "用户名称"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "手机号"
+                },
+                "country_code": {
+                    "type": "string",
+                    "description": "地区代码"
+                }
+            },
+            "required": [
+                "uid"
+            ]
+        },
+        ".assite.api.UpdateOtherUserGenericInfoResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateOtherUserImportantInfoRequest": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "description": "用户id"
+                },
+                "add_roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "新增的用户角色"
+                },
+                "del_roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "删除的用户角色"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "用户状态"
+                }
+            },
+            "required": [
+                "uid"
+            ]
+        },
+        ".assite.api.UpdateOtherUserImportantInfoResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateWalletRequest": {
+            "type": "object",
+            "properties": {
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "钱包名称"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "钱包状态  1 冻结 2 激活"
+                }
+            },
+            "required": [
+                "wid"
+            ]
+        },
+        ".assite.api.UpdateWalletResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateWithdrawPolicyRequest": {
+            "type": "object",
+            "properties": {
+                "add_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "新增的策略参数"
+                },
+                "del_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "删除的策略参数"
+                },
+                "update_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "更新的策略参数"
+                }
+            }
+        },
+        ".assite.api.UpdateWithdrawPolicyResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UpdateWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "approved_all": {
+                    "type": "boolean",
+                    "description": "审核所有交易"
+                },
+                "withdraw_callback_url": {
+                    "type": "string",
+                    "description": "提现确认回调url"
+                },
+                "transfer_callback_url": {
+                    "type": "string",
+                    "description": "交易回调url"
+                },
+                "is_contain_confirm_num": {
+                    "type": "boolean",
+                    "description": "每增加一个确认数交易是否需要回调"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        ".assite.api.UpdateWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.UserActiveRequest": {
+            "type": "object",
+            "properties": {
+                "activation_code": {
+                    "type": "string",
+                    "description": "激活码"
+                },
+                "two_fa_captcha": {
+                    "type": "string",
+                    "description": "FA验证码"
+                },
+                "pass": {
+                    "type": "string",
+                    "description": "密码"
+                }
+            }
+        },
+        ".assite.api.UserActiveResponse": {
+            "type": "object",
+            "properties": {
+                "activation_code": {
+                    "type": "string",
+                    "description": "激活码"
+                },
+                "two_fa_code": {
+                    "type": "string",
+                    "description": "2FA编码"
+                },
+                "op_type": {
+                    "type": "integer",
+                    "description": "1 激活 2 改密码 3 改2FA"
+                }
+            }
+        },
+        ".assite.api.UserInviteRequest": {
+            "type": "object",
+            "properties": {
+                "user_name": {
+                    "type": "string",
+                    "description": "用户姓名"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "手机号"
+                },
+                "country_code": {
+                    "type": "string",
+                    "description": "地区代码"
+                }
+            },
+            "required": [
+                "user_name",
+                "email",
+                "mobile"
+            ]
+        },
+        ".assite.api.UserInviteResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".assite.api.VerifyMePassRequest": {
+            "type": "object",
+            "properties": {
+                "pass": {
+                    "type": "string",
+                    "description": "密码"
+                }
+            }
+        },
+        ".assite.api.VerifyMePassResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".shared.api.AddressInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "account_id": {
+                    "type": "integer",
+                    "description": "账户"
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": "创建地址的用户id"
+                },
+                "wallet_id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "coin_id": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "hd_path": {
+                    "type": "string",
+                    "description": "hd地址的路径"
+                },
+                "address_index": {
+                    "type": "integer",
+                    "description": "hd 的序号"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "label"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos用"
+                },
+                "public_key": {
+                    "type": "string",
+                    "description": "公钥"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "地址状态 2 State_Active正常可用; 3 State_UnActive 隐藏; 4 State_Delete 删除"
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "utxo模型不用此字段；账户模型：地址余额，生成充值/提现账单时都会去链上查询一下地址的余额，方便对账"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "地址版本 1 旧地址，从外部导入 2 新地址，钱包hd服务生成"
+                },
+                "monitor_status": {
+                    "type": "integer",
+                    "description": "监听状态。0:未监听;1:已监听;2:已移除。"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "地址表有两个功能：\n1、地址表 记录分配的地址，对于eth等公链，token地址=链地址\n2、地址余额表 记录地址的链上余额，充值、提现成功入账后都会去刷新链上地址余额，公链token在有充值/提现时，会生成token的地址及余额记录"
+        },
+        ".shared.api.ApiKey": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "account_id": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wallet_id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "access_type": {
+                    "type": "integer",
+                    "description": "权限类型：0:未知;1:查询;2:操作及查询;3:提现、操作及查询。"
+                },
+                "access_key": {
+                    "type": "string",
+                    "description": "API用户访问KEY"
+                },
+                "public_key": {
+                    "type": "string",
+                    "description": "API用户验签公钥"
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": "创建用户id"
+                },
+                "ip_limit": {
+                    "type": "string",
+                    "description": "IP白名单，多个IP用逗号分隔，为空不限制"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "status": {
+                    "type": "integer",
+                    "description": "ApiKey状态。0:未知;1:冻结;2:已激活;3:未激活;4:已删除。"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.AuthItem": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "权限ID"
+                },
+                "module": {
+                    "type": "string",
+                    "description": "模块名"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "权限名称"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "此权限对应的页面url"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "权限表"
+        },
+        ".shared.api.CoinInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "chain": {
+                    "type": "string",
+                    "description": "链 eg:eth"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号 eg: bix"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "币种全称"
+                },
+                "coin_addr": {
+                    "type": "string",
+                    "description": "合约地址、发行id等"
+                },
+                "original_decimal": {
+                    "type": "integer",
+                    "description": "小数点位数 eg:eth是18位"
+                },
+                "valid_decimal": {
+                    "type": "integer",
+                    "description": "钱包支持的小数点位数"
+                },
+                "is_active": {
+                    "type": "boolean",
+                    "description": "是否上架"
+                },
+                "can_deposit": {
+                    "type": "boolean",
+                    "description": "是否能充值 平台开关"
+                },
+                "can_withdraw": {
+                    "type": "boolean",
+                    "description": "是否能提现"
+                },
+                "explorer_url": {
+                    "type": "string",
+                    "description": "区块链浏览器地址"
+                },
+                "icon": {
+                    "type": "string",
+                    "description": "coin logo"
+                },
+                "is_utxo": {
+                    "type": "boolean",
+                    "description": "链类型"
+                },
+                "is_collect": {
+                    "type": "boolean",
+                    "description": "是否需要归集"
+                },
+                "confirming_threshold": {
+                    "type": "integer",
+                    "description": "确认数阀值"
+                },
+                "dust_threshold": {
+                    "type": "integer",
+                    "description": "最小交易额"
+                },
+                "request_memo": {
+                    "type": "boolean",
+                    "description": "是否需要memo"
+                },
+                "rpc_url": {
+                    "type": "string",
+                    "description": "访问coinwallet的地址"
+                },
+                "hd_coin_type": {
+                    "type": "integer",
+                    "description": "bip39 对应的CoinType"
+                },
+                "collect_amount_min": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "归集的最小金额"
+                },
+                "slow_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "middle_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fast_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fee_count": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "一次转账需要占用的系统资源数量"
+                },
+                "fee_limit_count": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "一次转账需要占用的系统资源数量的最大值"
+                },
+                "fee_ref_cid": {
+                    "type": "integer",
+                    "description": "fee coin id"
+                },
+                "fee_symbol": {
+                    "type": "string",
+                    "description": "fee coin symbol"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.CoinTx": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "币"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "block_num": {
+                    "type": "integer",
+                    "description": "relayid=md5(txid,toAddress,Memo,OutN,InnerTxid)\n区块高度"
+                },
+                "block_time": {
+                    "type": "integer",
+                    "description": "区块时间"
+                },
+                "txid": {
+                    "type": "string",
+                    "description": "交易id"
+                },
+                "from_address": {
+                    "type": "string",
+                    "description": "tx转出地址"
+                },
+                "to_address": {
+                    "type": "string",
+                    "description": "tx转入地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos用"
+                },
+                "out_n": {
+                    "type": "integer",
+                    "description": "btc outn/eth nonce/eos globalnumber"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "提现备注"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "tx交易金额"
+                },
+                "comment": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "request_id": {
+                    "type": "string",
+                    "description": "提现申请id 由调用方生成"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "交易类型 1 快速提现/充值(钱包内地址互转，不上链) 2 普通提现/充值（上链）"
+                },
+                "inner_txid": {
+                    "type": "string",
+                    "description": "内部Id 由系统生成，全表唯一"
+                },
+                "side": {
+                    "type": "integer",
+                    "description": "1 提现 2 充值"
+                },
+                "index": {
+                    "type": "integer",
+                    "description": "tx的当前序号，用来生成InnerTxid用"
+                },
+                "op_ref_uid": {
+                    "type": "integer",
+                    "description": "提现操作用户id"
+                },
+                "fee_rate": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fee_limit": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "上链fee允许最大值"
+                },
+                "fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "预估的上链fee 当使用固定费率时，此字段让系统自动填充"
+                },
+                "fee_act": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "实际花的上链fee"
+                },
+                "platform_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "给平台fee"
+                },
+                "fee_cid": {
+                    "type": "integer",
+                    "description": "fee coin id"
+                },
+                "fee_symbol": {
+                    "type": "string",
+                    "description": "fee coin symbol"
+                },
+                "approve_num": {
+                    "type": "integer",
+                    "description": "审核确认数"
+                },
+                "need_approve_num": {
+                    "type": "integer",
+                    "description": "需要的审核数（需要的确认数在policy设置参数里）"
+                },
+                "chain_cid": {
+                    "type": "integer",
+                    "description": "对于token，主链的Coin id,加此字段方便查询时把一条链的所有token一并查出"
+                },
+                "is_generate_bill": {
+                    "type": "boolean",
+                    "description": "是否已经生成账单"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "状态 1 提交/2 api回调确认/3 人工审核 /9 待发币 /10 发币中/11  等待区块数确认 /12 生成账单 /13 完成/14 失败"
+                },
+                "confirmed_num": {
+                    "type": "integer",
+                    "description": "确认数"
+                },
+                "need_confirmed_num": {
+                    "type": "integer",
+                    "description": "需要的最小确认数"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.CoinWithdrawQuota": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "quota_per_tx": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每笔限额"
+                },
+                "quota_per_hour": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每小时限额"
+                },
+                "quota_per_day": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每天限额"
+                },
+                "approved_person": {
+                    "type": "integer",
+                    "description": "需要审核的人数"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现限额设置"
+        },
+        ".shared.api.CoinWithdrawWhitelist": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "此设置的状态 1 未激活 2 已激活"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现白名单设置"
+        },
+        ".shared.api.CountryCode": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "地区代码"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述"
+                }
+            },
+            "description": "地区代码"
+        },
+        ".shared.api.Message": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "ctid": {
+                    "type": "integer",
+                    "description": "CoinTx id"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "消息类型"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "回调url"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "内容json"
+                },
+                "req_num": {
+                    "type": "integer",
+                    "description": "推送次数"
+                },
+                "max_req_num": {
+                    "type": "integer",
+                    "description": "允许最多推送次数"
+                },
+                "retry_inv": {
+                    "type": "integer",
+                    "description": "推送失败重试间隔 单位秒"
+                },
+                "push_status": {
+                    "type": "integer",
+                    "description": "0 未推送 1 推送中 2 成功 3 失败"
+                },
+                "commnet": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "推送消息"
+        },
+        ".shared.api.RoleItem": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "角色ID"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "角色名称"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "角色表"
+        },
+        ".shared.api.UserData": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "用户id"
+                },
+                "account_id": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "account_name": {
+                    "type": "string",
+                    "description": "账户名称"
+                },
+                "account_description": {
+                    "type": "string",
+                    "description": "账户描述"
+                },
+                "welcome": {
+                    "type": "string",
+                    "description": "防钓鱼码"
+                },
+                "status": {
+                    "type": "integer",
+                    "description": "用户状态 1 冻结 2 已激活 3 未激活 4 已删除"
+                },
+                "invitation_uid": {
+                    "type": "integer",
+                    "description": "邀请用户id"
+                },
+                "activation_code": {
+                    "type": "string",
+                    "description": "激活码"
+                },
+                "user_name": {
+                    "type": "string",
+                    "description": "用户名称"
+                },
+                "pass": {
+                    "type": "string",
+                    "description": "用户密码"
+                },
+                "nonce": {
+                    "type": "integer"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "手机号"
+                },
+                "country_code": {
+                    "type": "string",
+                    "description": "地区代码"
+                },
+                "two_fa": {
+                    "type": "string",
+                    "description": "二次验证"
+                },
+                "perms": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.AuthItem"
+                    },
+                    "description": "权限"
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.RoleItem"
+                    },
+                    "description": "角色"
+                },
+                "admin": {
+                    "type": "boolean",
+                    "description": "是否为管理员"
+                },
+                "lang": {
+                    "type": "string",
+                    "description": "语言"
+                },
+                "currency": {
+                    "type": "string",
+                    "description": "货币"
+                },
+                "login_err_num": {
+                    "type": "integer",
+                    "description": "登录错误次数"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "普通用户"
+        },
+        ".shared.api.WalletAsset": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "资产余额"
+                },
+                "freeze": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "资产冻结金额"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WalletCoin": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "can_fixed_fee": {
+                    "type": "boolean",
+                    "description": "每次提现按固定fee扣收，与实际fee的差额作为平台服务费"
+                },
+                "fixed_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "固定的fee"
+                },
+                "can_platform_fee": {
+                    "type": "boolean",
+                    "description": "是否允许平台额外收取提现的服务费"
+                },
+                "platform_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "平台收取的fee，针对账户收取，不同账户可能不一样"
+                },
+                "fee_ref_cid": {
+                    "type": "integer"
+                },
+                "fee_symbol": {
+                    "type": "string"
+                },
+                "can_deposit": {
+                    "type": "boolean",
+                    "description": "是否能充值 账户开关"
+                },
+                "can_withdraw": {
+                    "type": "boolean",
+                    "description": "是否能提现"
+                },
+                "Label": {
+                    "type": "string",
+                    "description": "分配地址时，传递给coinWallet的label，为空则后台自动填充"
+                },
+                "can_new_address": {
+                    "type": "boolean",
+                    "description": "是否允许生成充值地址 管理没有私钥的钱包时，此钱包就不能生成充值地址，避免地址混合一块"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "地址状态 2 State_Active正常可用;  4 State_Delete 删除 使用软删除"
+                },
+                "is_active": {
+                    "type": "boolean",
+                    "description": "是否可用,对账对不上时,禁止提现"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WalletCoinDetail": {
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "$ref": "#/definitions/.shared.api.CoinInfo",
+                    "description": "币详情"
+                },
+                "coin": {
+                    "$ref": "#/definitions/.shared.api.WalletCoin",
+                    "description": "币参数"
+                },
+                "asset": {
+                    "$ref": "#/definitions/.shared.api.WalletAsset",
+                    "description": "币资产"
+                }
+            }
+        },
+        ".shared.api.WalletDetail": {
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "$ref": "#/definitions/.shared.api.WalletInfo",
+                    "description": "钱包详情"
+                },
+                "wallet_coin_detail": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoinDetail"
+                    },
+                    "description": "钱包添加的币"
+                }
+            }
+        },
+        ".shared.api.WalletInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "钱包名称"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "钱包状态1 冻结/2 激活"
+                },
+                "wtype": {
+                    "type": "integer",
+                    "description": "钱包类型"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WithdrawPolicy": {
+            "type": "object",
+            "properties": {
+                "setting": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting",
+                    "description": "提现参数"
+                },
+                "quota": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawQuota"
+                    },
+                    "description": "限额，一旦设置了限额，只有在限额内的才能提现，以审核人数"
+                },
+                "whitelist": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawWhitelist"
+                    },
+                    "description": "白名单，一旦设置了白名单，只有在白名单的地址才能提现"
+                }
+            },
+            "description": "提现策略设置"
+        },
+        ".shared.api.WithdrawSetting": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "approved_all": {
+                    "type": "boolean",
+                    "description": "审核所有交易,对所有发送交易都需要一个审核才能放行(无视发送限制策略)"
+                },
+                "withdraw_callback_url": {
+                    "type": "string",
+                    "description": "提现确认回调"
+                },
+                "transfer_callback_url": {
+                    "type": "string",
+                    "description": "交易回调"
+                },
+                "is_contain_confirm_num": {
+                    "type": "boolean",
+                    "description": "包含确认数"
+                },
+                "withdraw_callback_retry_num": {
+                    "type": "integer",
+                    "description": "提现确认回调最多重试次数"
+                },
+                "transfer_callback_retry_num": {
+                    "type": "integer",
+                    "description": "交易回调(充值、提现确认数已经大于最小确认数)最多重试次数"
+                },
+                "confirming_callback_retry_num": {
+                    "type": "integer",
+                    "description": "交易回调(确认区间)最多重试次数"
+                },
+                "retry_inv": {
+                    "type": "integer",
+                    "description": "重试间隔 单位秒"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现策略设置"
+        }
+    }
+}

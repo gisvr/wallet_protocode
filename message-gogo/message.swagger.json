@@ -1,0 +1,101 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "message.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/notify": {
+            "post": {
+                "summary": "发出通知",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.message.api.NotifyReponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.message.api.NotifyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "message.api.NotifyCenter"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".message.api.Message": {
+            "type": "object",
+            "properties": {
+                "subject": {
+                    "type": "string"
+                },
+                "pomt": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "Level": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".message.api.NotifyReponse": {
+            "type": "object",
+            "properties": {
+                "ErrCode": {
+                    "type": "integer"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                }
+            }
+        },
+        ".message.api.NotifyRequest": {
+            "type": "object",
+            "properties": {
+                "channelId": {
+                    "type": "string"
+                },
+                "message": {
+                    "$ref": "#/definitions/.message.api.Message"
+                },
+                "Param": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

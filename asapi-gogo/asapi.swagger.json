@@ -1,0 +1,1224 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "asapi.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/address_history": {
+            "get": {
+                "summary": "查看地址总表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.ListAllAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/address_info": {
+            "get": {
+                "summary": "验证地址归属 即地址存在否",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.HasAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/coin_info": {
+            "get": {
+                "summary": "获取指定coin钱包信息及余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.GetCoinInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/collect_callback": {
+            "post": {
+                "summary": "外部做归集时，提现完成回调通知",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.CollectCallbackResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.asapi.api.CollectCallbackRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/deposit_info": {
+            "get": {
+                "summary": "获取未入账交易详情",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.GetUnConfirmedTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/import_old_address": {
+            "post": {
+                "summary": "导入老地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.ImportOldAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.asapi.api.ImportOldAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/is_valid_address": {
+            "get": {
+                "summary": "验证地址合法性",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.CheckAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/new_address": {
+            "post": {
+                "summary": "生成新的充值地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.NewDepositAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.asapi.api.NewDepositAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/new_withdraw_request": {
+            "post": {
+                "summary": "申请提现",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.NewWithdrawResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.asapi.api.NewWithdrawRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/org_info": {
+            "get": {
+                "summary": "获取所有coin的信息及余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.ListAllCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/pending_transactions": {
+            "get": {
+                "summary": "获取未入账交易列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.ListUnConfirmedTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "side",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "min_id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/transaction": {
+            "get": {
+                "summary": "获取已入账交易详情",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.GetConfirmedTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/transaction_history": {
+            "get": {
+                "summary": "获取已入账交易列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.ListConfirmedTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "coin",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "side",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "begin_time",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        },
+        "/withdraw_info_by_request_id": {
+            "get": {
+                "summary": "查看提现详情",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.asapi.api.GetWithdrawDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "request_id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "asapi.api.AsApi"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".asapi.api.CheckAddressRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.CheckAddressResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "boolean"
+                }
+            }
+        },
+        ".asapi.api.CoinAsset": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "display_code": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "decimal": {
+                    "type": "integer"
+                },
+                "can_deposit": {
+                    "type": "boolean"
+                },
+                "can_withdraw": {
+                    "type": "boolean"
+                },
+                "balance": {
+                    "type": "string"
+                },
+                "abs_balance": {
+                    "type": "string"
+                },
+                "fee_coin": {
+                    "type": "string"
+                },
+                "abs_estimate_fee": {
+                    "type": "string"
+                },
+                "confirming_threshold": {
+                    "type": "integer"
+                },
+                "dust_threshold": {
+                    "type": "integer"
+                },
+                "token_address": {
+                    "type": "string"
+                },
+                "require_memo": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.CollectCallbackRequest": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "type": "string"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "FromAddress": {
+                    "type": "string"
+                },
+                "ToAddress": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "OutN": {
+                    "type": "integer"
+                },
+                "Amount": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "OutNum": {
+                    "type": "integer"
+                },
+                "Fee": {
+                    "type": "string"
+                },
+                "FeeCoin": {
+                    "type": "string"
+                },
+                "BlockHash": {
+                    "type": "string"
+                },
+                "BlockNum": {
+                    "type": "integer"
+                },
+                "BlockTime": {
+                    "type": "integer"
+                },
+                "Confirm": {
+                    "type": "integer"
+                },
+                "Side": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.CollectCallbackResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.GetCoinInfoRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.GetCoinInfoResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.CoinAsset"
+                }
+            }
+        },
+        ".asapi.api.GetConfirmedTxRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.GetConfirmedTxResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.Txinfo"
+                }
+            }
+        },
+        ".asapi.api.GetUnConfirmedTxRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.GetUnConfirmedTxResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.Txinfo"
+                }
+            }
+        },
+        ".asapi.api.GetWithdrawDetailRequest": {
+            "type": "object",
+            "properties": {
+                "request_id": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.GetWithdrawDetailResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.Txinfo"
+                }
+            }
+        },
+        ".asapi.api.HasAddressRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.HasAddressResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.HasAddressResult"
+                }
+            }
+        },
+        ".asapi.api.HasAddressResult": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.ImportOldAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "type": "string"
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.ImportOldAddressResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "boolean"
+                }
+            }
+        },
+        ".asapi.api.ListAllAddressRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.ListAllAddressResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.asapi.api.ListAllAddressResult"
+                    }
+                }
+            }
+        },
+        ".asapi.api.ListAllAddressResult": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.ListAllCoinRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".asapi.api.ListAllCoinResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.asapi.api.ListAllCoinResult"
+                    }
+                }
+            }
+        },
+        ".asapi.api.ListAllCoinResult": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "assets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.asapi.api.CoinAsset"
+                    }
+                }
+            }
+        },
+        ".asapi.api.ListConfirmedTxRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "side": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "": {
+                    "type": "integer"
+                },
+                "": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                },
+                "begin_time": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".asapi.api.ListConfirmedTxResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.asapi.api.Txinfo"
+                    }
+                }
+            }
+        },
+        ".asapi.api.ListUnConfirmedTxRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "side": {
+                    "type": "string"
+                },
+                "max_id": {
+                    "type": "integer"
+                },
+                "min_id": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".asapi.api.ListUnConfirmedTxResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.asapi.api.Txinfo"
+                    }
+                }
+            }
+        },
+        ".asapi.api.NewDepositAddressRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.NewDepositAddressResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/definitions/.asapi.api.NewDepositAddressResult"
+                }
+            }
+        },
+        ".asapi.api.NewDepositAddressResult": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.NewWithdrawRequest": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "request_id": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "": {
+                    "type": "integer"
+                },
+                "memo": {
+                    "type": "string"
+                },
+                "": {
+                    "type": "boolean"
+                },
+                "": {
+                    "type": "boolean"
+                }
+            }
+        },
+        ".asapi.api.NewWithdrawResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "error_code": {
+                    "type": "integer"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                }
+            }
+        },
+        ".asapi.api.Txinfo": {
+            "type": "object",
+            "properties": {
+                "coin": {
+                    "type": "string"
+                },
+                "display_code": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "decimal": {
+                    "type": "integer"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "memo": {
+                    "type": "string"
+                },
+                "source_address": {
+                    "type": "string"
+                },
+                "source_address_detail": {
+                    "type": "string"
+                },
+                "side": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "string"
+                },
+                "abs_amount": {
+                    "type": "string"
+                },
+                "abs_platform_fee": {
+                    "type": "string"
+                },
+                "txid": {
+                    "type": "string"
+                },
+                "vout_n": {
+                    "type": "integer"
+                },
+                "request_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "create_time": {
+                    "type": "integer"
+                },
+                "last_time": {
+                    "type": "integer"
+                },
+                "confirming_threshold": {
+                    "type": "integer"
+                },
+                "confirmed_num": {
+                    "type": "integer"
+                },
+                "fee_coin": {
+                    "type": "string"
+                },
+                "fee_amount": {
+                    "type": "integer"
+                },
+                "fee_decimal": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

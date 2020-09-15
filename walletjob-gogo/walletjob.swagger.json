@@ -1,0 +1,222 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "walletjob.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/wallet/job/blockheader": {
+            "post": {
+                "summary": "接收到block时的回调",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.walletjob.api.EventBlockResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.EventBlock"
+                        }
+                    }
+                ],
+                "tags": [
+                    "walletjob.api.Index"
+                ]
+            }
+        },
+        "/wallet/job/transaction": {
+            "post": {
+                "summary": "解析出Tx时的回调",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.walletjob.api.EventTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.EventTx"
+                        }
+                    }
+                ],
+                "tags": [
+                    "walletjob.api.Index"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".coinwallet.api.BlockHead": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "BlockNum": {
+                    "type": "integer"
+                },
+                "BlockTime": {
+                    "type": "integer"
+                },
+                "Hash": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.CoinInfo": {
+            "type": "object",
+            "properties": {
+                "Cid": {
+                    "type": "integer"
+                },
+                "Chain": {
+                    "type": "string"
+                },
+                "Symbol": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "CoinAddr": {
+                    "type": "string"
+                },
+                "Decimal": {
+                    "type": "integer"
+                },
+                "ValidDecimal": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".coinwallet.api.EventBlock": {
+            "type": "object",
+            "properties": {
+                "BlockHead": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.BlockHead"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.EventTx": {
+            "type": "object",
+            "properties": {
+                "Txs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.TxInfo"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.TxInfo": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "FromAddress": {
+                    "type": "string"
+                },
+                "ToAddress": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "": {
+                    "type": "integer"
+                },
+                "Amount": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "OutNum": {
+                    "type": "integer"
+                },
+                "Fee": {
+                    "type": "string"
+                },
+                "FeeCoin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "BlockHash": {
+                    "type": "string"
+                },
+                "BlockNum": {
+                    "type": "integer"
+                },
+                "BlockTime": {
+                    "type": "integer"
+                },
+                "Confirm": {
+                    "type": "integer"
+                },
+                "Side": {
+                    "type": "string"
+                }
+            }
+        },
+        ".walletjob.api.EventBlockResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".walletjob.api.EventTxResponse": {
+            "type": "object",
+            "properties": {}
+        }
+    }
+}

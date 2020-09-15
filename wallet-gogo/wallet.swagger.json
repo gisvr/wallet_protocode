@@ -1,0 +1,4008 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "wallet.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/wallet.api.Wallet/AddMessage": {
+            "get": {
+                "summary": "推送历史记录",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.AddMessageRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/AddWallet": {
+            "get": {
+                "summary": "新增钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "AccountId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Name",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "WType",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/AddWalletCoin": {
+            "get": {
+                "summary": "添加coin钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.AddWalletCoinRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/AddWithdrawQuota": {
+            "get": {
+                "summary": "提现限额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.AddWithdrawQuotaRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/AddWithdrawSetting": {
+            "get": {
+                "summary": "提现策略设置",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.AddWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/AddWithdrawWhitelist": {
+            "get": {
+                "summary": "提现白名单",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.AddWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.AddWithdrawWhitelistRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/CheckAddress": {
+            "get": {
+                "summary": "验证地址合法性",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.CheckAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/CollectCallback": {
+            "get": {
+                "summary": "外部做归集时，提现完成回调通知",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.CollectCallbackResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.CollectCallbackRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetCoinFee": {
+            "get": {
+                "summary": "获取coin当前的最佳手续费率",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetCoinFeeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetNewAddress": {
+            "get": {
+                "summary": "增加新地址并加入扫块监控",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetNewAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Uid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Label",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWallet": {
+            "get": {
+                "summary": "根据钱包ID获取钱包信息。",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "WalletId",
+                        "description": "钱包ID。",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWalletAsset": {
+            "get": {
+                "summary": "获取指定coin钱包信息及余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWalletAssetResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWalletCoin": {
+            "get": {
+                "summary": "根据ID获取WalletCoin信息。",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Id",
+                        "description": "记录ID",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWithdrawDetail": {
+            "get": {
+                "summary": "获取交易详细信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWithdrawDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "RequestId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWithdrawPolicy": {
+            "get": {
+                "summary": "/wallet.api.Wallet/GetWithdrawPolicy",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWithdrawPolicyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/GetWithdrawSetting": {
+            "get": {
+                "summary": "/wallet.api.Wallet/GetWithdrawSetting",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.GetWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/HasAddress": {
+            "get": {
+                "summary": "验证地址归属 即地址存在否",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.HasAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/HideAddress": {
+            "get": {
+                "summary": "隐藏地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.HideAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ImportOldAddress": {
+            "get": {
+                "summary": "导入老地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ImportOldAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Uid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Memo",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Label",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListAddress": {
+            "get": {
+                "summary": "获取指定钱包coin的所有地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListCoinInfo": {
+            "get": {
+                "summary": "获取支持的钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListCoinInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListCoinTx": {
+            "get": {
+                "summary": "获取CoinTx列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListCoinTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "RefAid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "RefWid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "RefCid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Txid",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "FromAddress",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ToAddress",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Memo",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "RequestId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "InnerTxid",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Type",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "MinConfirmedNum",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "MinId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "MaxId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Limit",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "BeginBlockTime",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "EndBlockTime",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "BillStatus",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Side",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListMessage": {
+            "get": {
+                "summary": "/wallet.api.Wallet/ListMessage",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWallet": {
+            "get": {
+                "summary": "获取钱包信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "AccountId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "WalletId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWalletAsset": {
+            "get": {
+                "summary": "获取账户指定钱包所有coin的信息及余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWalletAssetResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWalletCoin": {
+            "get": {
+                "summary": "/wallet.api.Wallet/ListWalletCoin",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWalletCoinDetail": {
+            "get": {
+                "summary": "获取钱包coin及资产列表",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWalletCoinDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWalletDetail": {
+            "get": {
+                "summary": "获取钱包的详情，包括添加的币种、资产情况等",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWalletDetailResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Page",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWithdrawPolicy": {
+            "get": {
+                "summary": "/wallet.api.Wallet/ListWithdrawPolicy",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWithdrawPolicyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWithdrawQuota": {
+            "get": {
+                "summary": "/wallet.api.Wallet/ListWithdrawQuota",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/ListWithdrawWhitelist": {
+            "get": {
+                "summary": "/wallet.api.Wallet/ListWithdrawWhitelist",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.ListWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/NewWithdraw": {
+            "get": {
+                "summary": "申请提现",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.NewWithdrawResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.NewWithdrawRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/QueryCoinTx": {
+            "get": {
+                "summary": "查询CoinTx",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.QueryCoinTxResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "aid",
+                        "description": "账户id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "txt",
+                        "description": "模糊条件",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "wids",
+                        "description": "钱包id",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "cids",
+                        "description": "coin id",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "states",
+                        "description": "状态 3 等待审核 11 等待确认 13 成功 14 失败",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sides",
+                        "description": "类型 1 接收 2 发送",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "begin_block_time",
+                        "description": "上链时间 起始",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end_block_time",
+                        "description": "上链时间 结束 cointx.BlockTime \u003c EndBlockTime",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "begin_create_at",
+                        "description": "创建时间 起始",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end_create_at",
+                        "description": "创建时间 结束 cointx.BlockTime \u003c EndBlockTime",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "begin_update_at",
+                        "description": "更新时间 起始",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end_update_at",
+                        "description": "更新时间 结束 cointx.BlockTime \u003c EndBlockTime",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "page",
+                        "description": "第几页",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "page_size",
+                        "description": "每页条数",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/RemoveWallet": {
+            "get": {
+                "summary": "移除钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.RemoveWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "WalletId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/RemoveWalletCoin": {
+            "get": {
+                "summary": "删除Coin钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.RemoveWalletCoinResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Id",
+                        "description": "记录ID",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/RemoveWithdrawQuota": {
+            "get": {
+                "summary": "/wallet.api.Wallet/RemoveWithdrawQuota",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.RemoveWithdrawQuotaResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/RemoveWithdrawSetting": {
+            "get": {
+                "summary": "/wallet.api.Wallet/RemoveWithdrawSetting",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.RemoveWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/RemoveWithdrawWhitelist": {
+            "get": {
+                "summary": "/wallet.api.Wallet/RemoveWithdrawWhitelist",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.RemoveWithdrawWhitelistResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Id",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Aid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Wid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Cid",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/UpdateMessage": {
+            "get": {
+                "summary": "/wallet.api.Wallet/UpdateMessage",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.UpdateMessageResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.UpdateMessageRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/UpdateWallet": {
+            "get": {
+                "summary": "更新钱包",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.UpdateWalletResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "WalletId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Name",
+                        "description": "钱包名称",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "State",
+                        "description": "钱包状态1 冻结/2 激活",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/UpdateWithdrawPolicy": {
+            "get": {
+                "summary": "/wallet.api.Wallet/UpdateWithdrawPolicy",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.UpdateWithdrawPolicyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.UpdateWithdrawPolicyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        },
+        "/wallet.api.Wallet/UpdateWithdrawSetting": {
+            "get": {
+                "summary": "/wallet.api.Wallet/UpdateWithdrawSetting",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.wallet.api.UpdateWithdrawSettingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.wallet.api.UpdateWithdrawSettingRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "wallet.api.Wallet"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".shared.api.AddressInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "account_id": {
+                    "type": "integer",
+                    "description": "账户"
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": "创建地址的用户id"
+                },
+                "wallet_id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "coin_id": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "hd_path": {
+                    "type": "string",
+                    "description": "hd地址的路径"
+                },
+                "address_index": {
+                    "type": "integer",
+                    "description": "hd 的序号"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "label"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos用"
+                },
+                "public_key": {
+                    "type": "string",
+                    "description": "公钥"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "地址状态 2 State_Active正常可用; 3 State_UnActive 隐藏; 4 State_Delete 删除"
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "utxo模型不用此字段；账户模型：地址余额，生成充值/提现账单时都会去链上查询一下地址的余额，方便对账"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "地址版本 1 旧地址，从外部导入 2 新地址，钱包hd服务生成"
+                },
+                "monitor_status": {
+                    "type": "integer",
+                    "description": "监听状态。0:未监听;1:已监听;2:已移除。"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "地址表有两个功能：\n1、地址表 记录分配的地址，对于eth等公链，token地址=链地址\n2、地址余额表 记录地址的链上余额，充值、提现成功入账后都会去刷新链上地址余额，公链token在有充值/提现时，会生成token的地址及余额记录"
+        },
+        ".shared.api.CoinInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "chain": {
+                    "type": "string",
+                    "description": "链 eg:eth"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号 eg: bix"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "币种全称"
+                },
+                "coin_addr": {
+                    "type": "string",
+                    "description": "合约地址、发行id等"
+                },
+                "original_decimal": {
+                    "type": "integer",
+                    "description": "小数点位数 eg:eth是18位"
+                },
+                "valid_decimal": {
+                    "type": "integer",
+                    "description": "钱包支持的小数点位数"
+                },
+                "is_active": {
+                    "type": "boolean",
+                    "description": "是否上架"
+                },
+                "can_deposit": {
+                    "type": "boolean",
+                    "description": "是否能充值 平台开关"
+                },
+                "can_withdraw": {
+                    "type": "boolean",
+                    "description": "是否能提现"
+                },
+                "explorer_url": {
+                    "type": "string",
+                    "description": "区块链浏览器地址"
+                },
+                "icon": {
+                    "type": "string",
+                    "description": "coin logo"
+                },
+                "is_utxo": {
+                    "type": "boolean",
+                    "description": "链类型"
+                },
+                "is_collect": {
+                    "type": "boolean",
+                    "description": "是否需要归集"
+                },
+                "confirming_threshold": {
+                    "type": "integer",
+                    "description": "确认数阀值"
+                },
+                "dust_threshold": {
+                    "type": "integer",
+                    "description": "最小交易额"
+                },
+                "request_memo": {
+                    "type": "boolean",
+                    "description": "是否需要memo"
+                },
+                "rpc_url": {
+                    "type": "string",
+                    "description": "访问coinwallet的地址"
+                },
+                "hd_coin_type": {
+                    "type": "integer",
+                    "description": "bip39 对应的CoinType"
+                },
+                "collect_amount_min": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "归集的最小金额"
+                },
+                "slow_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "middle_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fast_fee_unit_price": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fee_count": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "一次转账需要占用的系统资源数量"
+                },
+                "fee_limit_count": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "一次转账需要占用的系统资源数量的最大值"
+                },
+                "fee_ref_cid": {
+                    "type": "integer",
+                    "description": "fee coin id"
+                },
+                "fee_symbol": {
+                    "type": "string",
+                    "description": "fee coin symbol"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.CoinTx": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "币"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "block_num": {
+                    "type": "integer",
+                    "description": "relayid=md5(txid,toAddress,Memo,OutN,InnerTxid)\n区块高度"
+                },
+                "block_time": {
+                    "type": "integer",
+                    "description": "区块时间"
+                },
+                "txid": {
+                    "type": "string",
+                    "description": "交易id"
+                },
+                "from_address": {
+                    "type": "string",
+                    "description": "tx转出地址"
+                },
+                "to_address": {
+                    "type": "string",
+                    "description": "tx转入地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo eos用"
+                },
+                "out_n": {
+                    "type": "integer",
+                    "description": "btc outn/eth nonce/eos globalnumber"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "提现备注"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "tx交易金额"
+                },
+                "comment": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "request_id": {
+                    "type": "string",
+                    "description": "提现申请id 由调用方生成"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "交易类型 1 快速提现/充值(钱包内地址互转，不上链) 2 普通提现/充值（上链）"
+                },
+                "inner_txid": {
+                    "type": "string",
+                    "description": "内部Id 由系统生成，全表唯一"
+                },
+                "side": {
+                    "type": "integer",
+                    "description": "1 提现 2 充值"
+                },
+                "index": {
+                    "type": "integer",
+                    "description": "tx的当前序号，用来生成InnerTxid用"
+                },
+                "op_ref_uid": {
+                    "type": "integer",
+                    "description": "提现操作用户id"
+                },
+                "fee_rate": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "费率"
+                },
+                "fee_limit": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "上链fee允许最大值"
+                },
+                "fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "预估的上链fee 当使用固定费率时，此字段让系统自动填充"
+                },
+                "fee_act": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "实际花的上链fee"
+                },
+                "platform_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "给平台fee"
+                },
+                "fee_cid": {
+                    "type": "integer",
+                    "description": "fee coin id"
+                },
+                "fee_symbol": {
+                    "type": "string",
+                    "description": "fee coin symbol"
+                },
+                "approve_num": {
+                    "type": "integer",
+                    "description": "审核确认数"
+                },
+                "need_approve_num": {
+                    "type": "integer",
+                    "description": "需要的审核数（需要的确认数在policy设置参数里）"
+                },
+                "chain_cid": {
+                    "type": "integer",
+                    "description": "对于token，主链的Coin id,加此字段方便查询时把一条链的所有token一并查出"
+                },
+                "is_generate_bill": {
+                    "type": "boolean",
+                    "description": "是否已经生成账单"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "状态 1 提交/2 api回调确认/3 人工审核 /9 待发币 /10 发币中/11  等待区块数确认 /12 生成账单 /13 完成/14 失败"
+                },
+                "confirmed_num": {
+                    "type": "integer",
+                    "description": "确认数"
+                },
+                "need_confirmed_num": {
+                    "type": "integer",
+                    "description": "需要的最小确认数"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.CoinWithdrawQuota": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "quota_per_tx": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每笔限额"
+                },
+                "quota_per_hour": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每小时限额"
+                },
+                "quota_per_day": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "每天限额"
+                },
+                "approved_person": {
+                    "type": "integer",
+                    "description": "需要审核的人数"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现限额设置"
+        },
+        ".shared.api.CoinWithdrawWhitelist": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "memo": {
+                    "type": "string",
+                    "description": "memo"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "此设置的状态 1 未激活 2 已激活"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现白名单设置"
+        },
+        ".shared.api.Message": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "ctid": {
+                    "type": "integer",
+                    "description": "CoinTx id"
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "消息类型"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "回调url"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "内容json"
+                },
+                "req_num": {
+                    "type": "integer",
+                    "description": "推送次数"
+                },
+                "max_req_num": {
+                    "type": "integer",
+                    "description": "允许最多推送次数"
+                },
+                "retry_inv": {
+                    "type": "integer",
+                    "description": "推送失败重试间隔 单位秒"
+                },
+                "push_status": {
+                    "type": "integer",
+                    "description": "0 未推送 1 推送中 2 成功 3 失败"
+                },
+                "commnet": {
+                    "type": "string",
+                    "description": "备注"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "推送消息"
+        },
+        ".shared.api.WalletAsset": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin代号"
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "资产余额"
+                },
+                "freeze": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "资产冻结金额"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WalletCoin": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "cid": {
+                    "type": "integer",
+                    "description": "Coin id"
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "Coin 代号"
+                },
+                "can_fixed_fee": {
+                    "type": "boolean",
+                    "description": "每次提现按固定fee扣收，与实际fee的差额作为平台服务费"
+                },
+                "fixed_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "固定的fee"
+                },
+                "can_platform_fee": {
+                    "type": "boolean",
+                    "description": "是否允许平台额外收取提现的服务费"
+                },
+                "platform_fee": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "平台收取的fee，针对账户收取，不同账户可能不一样"
+                },
+                "fee_ref_cid": {
+                    "type": "integer"
+                },
+                "fee_symbol": {
+                    "type": "string"
+                },
+                "can_deposit": {
+                    "type": "boolean",
+                    "description": "是否能充值 账户开关"
+                },
+                "can_withdraw": {
+                    "type": "boolean",
+                    "description": "是否能提现"
+                },
+                "Label": {
+                    "type": "string",
+                    "description": "分配地址时，传递给coinWallet的label，为空则后台自动填充"
+                },
+                "can_new_address": {
+                    "type": "boolean",
+                    "description": "是否允许生成充值地址 管理没有私钥的钱包时，此钱包就不能生成充值地址，避免地址混合一块"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "地址状态 2 State_Active正常可用;  4 State_Delete 删除 使用软删除"
+                },
+                "is_active": {
+                    "type": "boolean",
+                    "description": "是否可用,对账对不上时,禁止提现"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WalletCoinDetail": {
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "$ref": "#/definitions/.shared.api.CoinInfo",
+                    "description": "币详情"
+                },
+                "coin": {
+                    "$ref": "#/definitions/.shared.api.WalletCoin",
+                    "description": "币参数"
+                },
+                "asset": {
+                    "$ref": "#/definitions/.shared.api.WalletAsset",
+                    "description": "币资产"
+                }
+            }
+        },
+        ".shared.api.WalletDetail": {
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "$ref": "#/definitions/.shared.api.WalletInfo",
+                    "description": "钱包详情"
+                },
+                "wallet_coin_detail": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoinDetail"
+                    },
+                    "description": "钱包添加的币"
+                }
+            }
+        },
+        ".shared.api.WalletInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "钱包名称"
+                },
+                "state": {
+                    "type": "integer",
+                    "description": "钱包状态1 冻结/2 激活"
+                },
+                "wtype": {
+                    "type": "integer",
+                    "description": "钱包类型"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            }
+        },
+        ".shared.api.WithdrawPolicy": {
+            "type": "object",
+            "properties": {
+                "setting": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting",
+                    "description": "提现参数"
+                },
+                "quota": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawQuota"
+                    },
+                    "description": "限额，一旦设置了限额，只有在限额内的才能提现，以审核人数"
+                },
+                "whitelist": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawWhitelist"
+                    },
+                    "description": "白名单，一旦设置了白名单，只有在白名单的地址才能提现"
+                }
+            },
+            "description": "提现策略设置"
+        },
+        ".shared.api.WithdrawSetting": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "wid": {
+                    "type": "integer",
+                    "description": "钱包id"
+                },
+                "approved_all": {
+                    "type": "boolean",
+                    "description": "审核所有交易,对所有发送交易都需要一个审核才能放行(无视发送限制策略)"
+                },
+                "withdraw_callback_url": {
+                    "type": "string",
+                    "description": "提现确认回调"
+                },
+                "transfer_callback_url": {
+                    "type": "string",
+                    "description": "交易回调"
+                },
+                "is_contain_confirm_num": {
+                    "type": "boolean",
+                    "description": "包含确认数"
+                },
+                "withdraw_callback_retry_num": {
+                    "type": "integer",
+                    "description": "提现确认回调最多重试次数"
+                },
+                "transfer_callback_retry_num": {
+                    "type": "integer",
+                    "description": "交易回调(充值、提现确认数已经大于最小确认数)最多重试次数"
+                },
+                "confirming_callback_retry_num": {
+                    "type": "integer",
+                    "description": "交易回调(确认区间)最多重试次数"
+                },
+                "retry_inv": {
+                    "type": "integer",
+                    "description": "重试间隔 单位秒"
+                },
+                "create_at": {
+                    "type": "integer",
+                    "description": "创建时间"
+                },
+                "update_at": {
+                    "type": "integer",
+                    "description": "最后更新时间"
+                }
+            },
+            "description": "提现策略设置"
+        },
+        ".wallet.api.AddMessageRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.Message"
+                }
+            }
+        },
+        ".wallet.api.AddMessageResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WalletCoin"
+                }
+            }
+        },
+        ".wallet.api.AddWalletCoinResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWalletRequest": {
+            "type": "object",
+            "properties": {
+                "AccountId": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "WType": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWalletResponse": {
+            "type": "object",
+            "properties": {
+                "Wid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.CoinWithdrawQuota"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.CoinWithdrawWhitelist"
+                }
+            }
+        },
+        ".wallet.api.AddWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.CheckAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Cid": {
+                    "type": "integer"
+                },
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.CheckAddressResponse": {
+            "type": "object",
+            "properties": {
+                "Valid": {
+                    "type": "boolean"
+                }
+            }
+        },
+        ".wallet.api.CollectCallbackRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.CoinTx"
+                }
+            }
+        },
+        ".wallet.api.CollectCallbackResponse": {
+            "type": "object",
+            "properties": {
+                "InnerTxid": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.GetCoinFeeRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.GetCoinFeeResponse": {
+            "type": "object",
+            "properties": {
+                "FeeSlow": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "FeeMiddle": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "FeeFast": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "LimitFee": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "PlatformFee": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "FeeSlowStr": {
+                    "type": "string"
+                },
+                "FeeMiddleStr": {
+                    "type": "string"
+                },
+                "FeeFastStr": {
+                    "type": "string"
+                },
+                "LimitFeeStr": {
+                    "type": "string"
+                },
+                "PlatformFeeStr": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.GetNewAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Uid": {
+                    "type": "integer"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.GetNewAddressResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.AddressInfo"
+                }
+            }
+        },
+        ".wallet.api.GetWalletAssetRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.GetWalletAssetResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WalletAsset"
+                }
+            }
+        },
+        ".wallet.api.GetWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "记录ID"
+                }
+            }
+        },
+        ".wallet.api.GetWalletCoinResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WalletCoin"
+                }
+            }
+        },
+        ".wallet.api.GetWalletRequest": {
+            "type": "object",
+            "properties": {
+                "WalletId": {
+                    "type": "integer",
+                    "description": "钱包ID。"
+                }
+            }
+        },
+        ".wallet.api.GetWalletResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WalletInfo"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawDetailRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "RequestId": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawDetailResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.CoinTx"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawPolicyRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawPolicyResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.GetWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting"
+                }
+            }
+        },
+        ".wallet.api.HasAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.HasAddressResponse": {
+            "type": "object",
+            "properties": {
+                "Exist": {
+                    "type": "boolean"
+                }
+            }
+        },
+        ".wallet.api.HideAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.HideAddressResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.ImportOldAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Uid": {
+                    "type": "integer"
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.ImportOldAddressResponse": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListAddressResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.AddressInfo"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListCoinInfoRequest": {
+            "type": "object",
+            "properties": {
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListCoinInfoResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinInfo"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListCoinTxRequest": {
+            "type": "object",
+            "properties": {
+                "RefAid": {
+                    "type": "integer"
+                },
+                "RefWid": {
+                    "type": "integer"
+                },
+                "RefCid": {
+                    "type": "integer"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "FromAddress": {
+                    "type": "string"
+                },
+                "ToAddress": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "RequestId": {
+                    "type": "string"
+                },
+                "InnerTxid": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "integer"
+                },
+                "MinConfirmedNum": {
+                    "type": "integer"
+                },
+                "MinId": {
+                    "type": "integer"
+                },
+                "MaxId": {
+                    "type": "integer"
+                },
+                "Limit": {
+                    "type": "integer"
+                },
+                "BeginBlockTime": {
+                    "type": "integer"
+                },
+                "EndBlockTime": {
+                    "type": "integer"
+                },
+                "BillStatus": {
+                    "type": "integer"
+                },
+                "Side": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListCoinTxResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinTx"
+                    }
+                }
+            }
+        },
+        ".wallet.api.ListMessageRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListMessageResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.Message"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletAssetRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletAssetResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletAsset"
+                    }
+                }
+            }
+        },
+        ".wallet.api.ListWalletCoinDetailRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletCoinDetailResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoinDetail"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletCoinResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletCoin"
+                    }
+                }
+            }
+        },
+        ".wallet.api.ListWalletDetailRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletDetailResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletDetail"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletRequest": {
+            "type": "object",
+            "properties": {
+                "AccountId": {
+                    "type": "integer"
+                },
+                "WalletId": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                },
+                "PageSize": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWalletResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.WalletInfo"
+                    }
+                },
+                "TotalNum": {
+                    "type": "integer"
+                },
+                "Page": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawPolicyRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawPolicyResponse": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy"
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawQuota"
+                    }
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.ListWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinWithdrawWhitelist"
+                    }
+                }
+            }
+        },
+        ".wallet.api.NewWithdrawRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.CoinTx"
+                }
+            }
+        },
+        ".wallet.api.NewWithdrawResponse": {
+            "type": "object",
+            "properties": {
+                "InnerTxid": {
+                    "type": "string"
+                }
+            }
+        },
+        ".wallet.api.QueryCoinTxRequest": {
+            "type": "object",
+            "properties": {
+                "aid": {
+                    "type": "integer",
+                    "description": "账户id"
+                },
+                "txt": {
+                    "type": "string",
+                    "description": "模糊条件"
+                },
+                "wids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "钱包id"
+                },
+                "cids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "coin id"
+                },
+                "states": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "状态 3 等待审核 11 等待确认 13 成功 14 失败"
+                },
+                "sides": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "类型 1 接收 2 发送"
+                },
+                "begin_block_time": {
+                    "type": "integer",
+                    "description": "上链时间 起始"
+                },
+                "end_block_time": {
+                    "type": "integer",
+                    "description": "上链时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "begin_create_at": {
+                    "type": "integer",
+                    "description": "创建时间 起始"
+                },
+                "end_create_at": {
+                    "type": "integer",
+                    "description": "创建时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "begin_update_at": {
+                    "type": "integer",
+                    "description": "更新时间 起始"
+                },
+                "end_update_at": {
+                    "type": "integer",
+                    "description": "更新时间 结束 cointx.BlockTime \u003c EndBlockTime"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                },
+                "page_size": {
+                    "type": "integer",
+                    "description": "每页条数"
+                }
+            }
+        },
+        ".wallet.api.QueryCoinTxResponse": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.shared.api.CoinTx"
+                    },
+                    "description": "交易列表"
+                },
+                "total_num": {
+                    "type": "integer",
+                    "description": "总数"
+                },
+                "page": {
+                    "type": "integer",
+                    "description": "第几页"
+                }
+            }
+        },
+        ".wallet.api.RemoveWalletCoinRequest": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "记录ID"
+                }
+            }
+        },
+        ".wallet.api.RemoveWalletCoinResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.RemoveWalletRequest": {
+            "type": "object",
+            "properties": {
+                "WalletId": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.RemoveWalletResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.RemoveWithdrawQuotaRequest": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.RemoveWithdrawQuotaResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.RemoveWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.RemoveWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.RemoveWithdrawWhitelistRequest": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Aid": {
+                    "type": "integer"
+                },
+                "Wid": {
+                    "type": "integer"
+                },
+                "Cid": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".wallet.api.RemoveWithdrawWhitelistResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.UpdateMessageRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.Message"
+                }
+            }
+        },
+        ".wallet.api.UpdateMessageResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.UpdateWalletRequest": {
+            "type": "object",
+            "properties": {
+                "WalletId": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "钱包名称"
+                },
+                "State": {
+                    "type": "integer",
+                    "description": "钱包状态1 冻结/2 激活"
+                }
+            }
+        },
+        ".wallet.api.UpdateWalletResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.UpdateWithdrawPolicyRequest": {
+            "type": "object",
+            "properties": {
+                "add_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "新增的策略参数"
+                },
+                "del_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "删除的策略参数"
+                },
+                "update_item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawPolicy",
+                    "description": "更新的策略参数"
+                }
+            }
+        },
+        ".wallet.api.UpdateWithdrawPolicyResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        ".wallet.api.UpdateWithdrawSettingRequest": {
+            "type": "object",
+            "properties": {
+                "Item": {
+                    "$ref": "#/definitions/.shared.api.WithdrawSetting"
+                }
+            }
+        },
+        ".wallet.api.UpdateWithdrawSettingResponse": {
+            "type": "object",
+            "properties": {}
+        }
+    }
+}

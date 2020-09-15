@@ -1,0 +1,1205 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "coinwallet.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/coinwallet.api.CoinWallet/AddMonitorAddress": {
+            "get": {
+                "summary": "添加钱包地址监控链上tx",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.AddMonitorAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetBalance": {
+            "get": {
+                "summary": "获取钱包余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetBalanceResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.GetBalanceRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetBalanceByAddress": {
+            "get": {
+                "summary": "获取地址余额",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetBalanceByAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.GetBalanceByAddressRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetBlockInfo": {
+            "get": {
+                "summary": "获取最新区块信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetBlockInfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "BlockNumOrHash",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetEstimateFee": {
+            "get": {
+                "summary": "获取当前预估费率",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetEstimateFeeResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ConfirmTargets",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetMnemonicFingerprinting": {
+            "get": {
+                "summary": "钱包私钥特征，用于验证钱包内记录账目的地址和链上的地址是一致的",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetMnemonicFingerprintingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetNewAddress": {
+            "get": {
+                "summary": "生成地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetNewAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "HdPath",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Label",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/GetTxinfo": {
+            "get": {
+                "summary": "获取tx 信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.GetTxinfoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "BlockHash",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Txid",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/ImportPrivateKey": {
+            "get": {
+                "summary": "导入钱包并返回地址信息",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.ImportPrivateKeyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "HdPath",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Label",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/RemoveMonitorAddress": {
+            "get": {
+                "summary": "移除钱包地址监控",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.RemoveMonitorAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/SendTo": {
+            "get": {
+                "summary": "发币",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.SendToResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.SendToRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/SendToMany": {
+            "get": {
+                "summary": "/coinwallet.api.CoinWallet/SendToMany",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.SendToManyResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/.coinwallet.api.SendToManyRequest"
+                        }
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/SetCallback": {
+            "get": {
+                "summary": "监控事件回调",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.SetCallbackResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Event",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Url",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        },
+        "/coinwallet.api.CoinWallet/ValidateAddress": {
+            "get": {
+                "summary": "验证地址",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.coinwallet.api.ValidateAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Address",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "coinwallet.api.CoinWallet"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".coinwallet.api.AARep": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "FromAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.AAReq": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "Amount": {
+                    "type": "string"
+                },
+                "FeeRate": {
+                    "type": "string"
+                },
+                "Fee": {
+                    "type": "string"
+                },
+                "FeeLimit": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.AddMonitorAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.AddMonitorAddressResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.BlockHead": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "BlockNum": {
+                    "type": "integer"
+                },
+                "BlockTime": {
+                    "type": "integer"
+                },
+                "Hash": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.CoinInfo": {
+            "type": "object",
+            "properties": {
+                "Cid": {
+                    "type": "integer"
+                },
+                "Chain": {
+                    "type": "string"
+                },
+                "Symbol": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "CoinAddr": {
+                    "type": "string"
+                },
+                "Decimal": {
+                    "type": "integer"
+                },
+                "ValidDecimal": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".coinwallet.api.FeeRate": {
+            "type": "object",
+            "properties": {
+                "UnitPrice": {
+                    "type": "string"
+                },
+                "ConfirmTarget": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceByAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Coins": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                    }
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "SafeConfirmNum": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceByAddressResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetBalanceByAddressResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceByAddressResult": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Amount": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceRequest": {
+            "type": "object",
+            "properties": {
+                "Coins": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                    }
+                },
+                "SafeConfirmNum": {
+                    "type": "integer"
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetBalanceResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetBalanceResult": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Amount": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetBlockInfoRequest": {
+            "type": "object",
+            "properties": {
+                "BlockNumOrHash": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetBlockInfoResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetBlockInfoResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetBlockInfoResult": {
+            "type": "object",
+            "properties": {
+                "Info": {
+                    "$ref": "#/definitions/.coinwallet.api.BlockHead"
+                }
+            }
+        },
+        ".coinwallet.api.GetEstimateFeeRequest": {
+            "type": "object",
+            "properties": {
+                "ConfirmTargets": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "description": "给定一组ConfirmTarget，返回每个ConfirmTarget对应的费率"
+        },
+        ".coinwallet.api.GetEstimateFeeResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetEstimateFeeResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetEstimateFeeResult": {
+            "type": "object",
+            "properties": {
+                "Fee": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.FeeRate"
+                    }
+                },
+                "FeeCoin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                }
+            }
+        },
+        ".coinwallet.api.GetMnemonicFingerprintingRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".coinwallet.api.GetMnemonicFingerprintingResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetMnemonicFingerprintingResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetMnemonicFingerprintingResult": {
+            "type": "object",
+            "properties": {
+                "Fingerprinting": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetNewAddressRequest": {
+            "type": "object",
+            "properties": {
+                "HdPath": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetNewAddressResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetNewAddressResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetNewAddressResult": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "PubKey": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetTxinfoRequest": {
+            "type": "object",
+            "properties": {
+                "BlockHash": {
+                    "type": "string"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.GetTxinfoResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.GetTxinfoResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.GetTxinfoResult": {
+            "type": "object",
+            "properties": {
+                "Tx": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.TxInfo"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.ImportPrivateKeyRequest": {
+            "type": "object",
+            "properties": {
+                "HdPath": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.ImportPrivateKeyResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.ImportPrivateKeyResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.ImportPrivateKeyResult": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "PubKey": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.RemoveMonitorAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.RemoveMonitorAddressResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.SendToManyRequest": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Obj": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.AAReq"
+                    }
+                },
+                "ChangeAddress": {
+                    "type": "string"
+                },
+                "FeeCoin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Pool": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.SendToManyResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.SendToManyResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.SendToManyResult": {
+            "type": "object",
+            "properties": {
+                "Obj": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.AARep"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.SendToRequest": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "Amount": {
+                    "type": "string"
+                },
+                "Fee": {
+                    "type": "string"
+                },
+                "FeeCoin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Pool": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.SendToResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.SendToResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.SendToResult": {
+            "type": "object",
+            "properties": {
+                "Txid": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.SetCallbackRequest": {
+            "type": "object",
+            "properties": {
+                "Event": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.SetCallbackResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.TxInfo": {
+            "type": "object",
+            "properties": {
+                "Coin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "Txid": {
+                    "type": "string"
+                },
+                "FromAddress": {
+                    "type": "string"
+                },
+                "ToAddress": {
+                    "type": "string"
+                },
+                "Memo": {
+                    "type": "string"
+                },
+                "": {
+                    "type": "integer"
+                },
+                "Amount": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "OutNum": {
+                    "type": "integer"
+                },
+                "Fee": {
+                    "type": "string"
+                },
+                "FeeCoin": {
+                    "$ref": "#/definitions/.coinwallet.api.CoinInfo"
+                },
+                "BlockHash": {
+                    "type": "string"
+                },
+                "BlockNum": {
+                    "type": "integer"
+                },
+                "BlockTime": {
+                    "type": "integer"
+                },
+                "Confirm": {
+                    "type": "integer"
+                },
+                "Side": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.ValidateAddressRequest": {
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            }
+        },
+        ".coinwallet.api.ValidateAddressResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.coinwallet.api.ValidateAddressResult"
+                    }
+                }
+            }
+        },
+        ".coinwallet.api.ValidateAddressResult": {
+            "type": "object",
+            "properties": {
+                "IsValidate": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

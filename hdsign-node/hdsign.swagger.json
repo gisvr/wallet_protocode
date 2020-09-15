@@ -1,0 +1,214 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "hdsign.proto",
+        "version": ""
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/hdsign.api.HdSign/GetMemo": {
+            "get": {
+                "summary": "生成eos的memo",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.hdsign.api.GetMemoResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "HdPath",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "hdsign.api.HdSign"
+                ]
+            }
+        },
+        "/hdsign.api.HdSign/GetMnemonicFingerprinting": {
+            "get": {
+                "summary": "钱包私钥特征，用于验证钱包内记录账目的地址和链上的地址是一致的",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.hdsign.api.GetMnemonicFingerprintingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "hdsign.api.HdSign"
+                ]
+            }
+        },
+        "/hdsign.api.HdSign/GetSecret": {
+            "get": {
+                "summary": "生成密钥",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/.hdsign.api.GetSecretResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "HdPath",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "hdsign.api.HdSign"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        ".hdsign.api.GetMemoRequest": {
+            "type": "object",
+            "properties": {
+                "HdPath": {
+                    "type": "string"
+                }
+            }
+        },
+        ".hdsign.api.GetMemoResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.hdsign.api.GetMemoResult"
+                    }
+                }
+            }
+        },
+        ".hdsign.api.GetMemoResult": {
+            "type": "object",
+            "properties": {
+                "keySecret": {
+                    "type": "string"
+                }
+            }
+        },
+        ".hdsign.api.GetMnemonicFingerprintingRequest": {
+            "type": "object",
+            "properties": {}
+        },
+        ".hdsign.api.GetMnemonicFingerprintingResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.hdsign.api.GetMnemonicFingerprintingResult"
+                    }
+                }
+            }
+        },
+        ".hdsign.api.GetMnemonicFingerprintingResult": {
+            "type": "object",
+            "properties": {
+                "Fingerprinting": {
+                    "type": "string"
+                }
+            }
+        },
+        ".hdsign.api.GetSecretRequest": {
+            "type": "object",
+            "properties": {
+                "HdPath": {
+                    "type": "string"
+                }
+            }
+        },
+        ".hdsign.api.GetSecretResponse": {
+            "type": "object",
+            "properties": {
+                "ErrNo": {
+                    "type": "string"
+                },
+                "ErrMsg": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/.hdsign.api.GetSecretResult"
+                    }
+                }
+            }
+        },
+        ".hdsign.api.GetSecretResult": {
+            "type": "object",
+            "properties": {
+                "keySecret": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
