@@ -6,8 +6,8 @@ package pbassite
 import (
 	"context"
 
-	bm "github.com/gisvr/wallet/src/lib/net/http/blademaster"
-	"github.com/gisvr/wallet/src/lib/net/http/blademaster/binding"
+	bm "github.com/gisvr/golib/net/http/blademaster"
+	"github.com/gisvr/golib/net/http/blademaster/binding"
 )
 
 // to suppressed 'imported but not used warning'

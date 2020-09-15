@@ -6,8 +6,8 @@ package pbwalletjob
 import (
 	"context"
 
-	bm "github.com/gisvr/wallet/src/lib/net/http/blademaster"
-	"github.com/gisvr/wallet/src/lib/net/http/blademaster/binding"
+	bm "github.com/gisvr/golib/net/http/blademaster"
+	"github.com/gisvr/golib/net/http/blademaster/binding"
 )
 import coinwallet_api "github.com/gisvr/wallet_protocode/coinwallet-gogo"
 
