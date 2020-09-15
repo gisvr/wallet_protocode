@@ -4,9 +4,9 @@
 package pbshared
 
 import (
-	bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time "bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
+	bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time "github.com/gisvr/wallet/src/lib/time"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	io "io"
@@ -509,7 +509,7 @@ type UserLoginLog struct {
 	//备注
 	Comment string `protobuf:"bytes,5,opt,name=Comment,proto3" json:"comment" gorm:"size:100"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 }
 
 func (m *UserLoginLog) Reset()         { *m = UserLoginLog{} }
@@ -597,9 +597,9 @@ type AccountInfo struct {
 	//账户状态 1 冻结 2 已激活 3 未激活 4 已删除
 	State StateType `protobuf:"varint,4,opt,name=State,proto3,enum=shared.api.StateType" json:"state"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *AccountInfo) Reset()         { *m = AccountInfo{} }
@@ -690,11 +690,11 @@ type UserActivationCode struct {
 	//操作结果
 	State ACodeStateType `protobuf:"varint,6,opt,name=State,proto3,enum=shared.api.ACodeStateType" json:"state" gorm:"index;"`
 	//操作时间
-	OpTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=OpTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"op_time" gorm:"type:datetime;"`
+	OpTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=OpTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"op_time" gorm:"type:datetime;"`
 	//有效期开始时间
-	BeginTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,8,opt,name=BeginTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"begin_time" gorm:"type:datetime;"`
+	BeginTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,8,opt,name=BeginTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"begin_time" gorm:"type:datetime;"`
 	//有效期结束时间
-	EndTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,9,opt,name=EndTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"end_time" gorm:"type:datetime;"`
+	EndTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,9,opt,name=EndTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"end_time" gorm:"type:datetime;"`
 }
 
 func (m *UserActivationCode) Reset()         { *m = UserActivationCode{} }
@@ -828,9 +828,9 @@ type UserInfo struct {
 	// 用户状态
 	Status StateType `protobuf:"varint,16,opt,name=Status,proto3,enum=shared.api.StateType" json:"status"`
 	// 创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,17,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,17,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	// 最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,18,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,18,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *UserInfo) Reset()         { *m = UserInfo{} }
@@ -1013,9 +1013,9 @@ type ApiKey struct {
 	// ApiKey状态。0:未知;1:冻结;2:已激活;3:未激活;4:已删除。
 	Status StateType `protobuf:"varint,10,opt,name=status,proto3,enum=shared.api.StateType" json:"status"`
 	// 创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	// 最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *ApiKey) Reset()         { *m = ApiKey{} }
@@ -1207,9 +1207,9 @@ type RoleItem struct {
 	// 备注
 	Remark string `protobuf:"bytes,3,opt,name=Remark,proto3" json:"remark" gorm:"size:100;"`
 	// 创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,4,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,4,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	// 最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,5,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,5,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *RoleItem) Reset()         { *m = RoleItem{} }
@@ -1293,9 +1293,9 @@ type AuthItem struct {
 	//描述
 	Description string `protobuf:"bytes,5,opt,name=Description,proto3" json:"description" gorm:"size:255;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,6,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,6,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *AuthItem) Reset()         { *m = AuthItem{} }
@@ -1453,7 +1453,7 @@ type AuthAssign struct {
 	// 角色ID
 	RoleId int64 `protobuf:"varint,4,opt,name=RoleId,proto3" json:"role_id" gorm:"index;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 }
 
 func (m *AuthAssign) Reset()         { *m = AuthAssign{} }
@@ -1568,9 +1568,9 @@ type UserData struct {
 	//登录错误次数
 	LoginErrNum int32 `protobuf:"varint,25,opt,name=LoginErrNum,proto3" json:"login_err_num"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,30,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,30,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,31,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,31,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *UserData) Reset()         { *m = UserData{} }
@@ -2311,8 +2311,8 @@ type BlockInfo struct {
 	Symbol    string                                                     `protobuf:"bytes,3,opt,name=Symbol,proto3" json:"Symbol,omitempty"`
 	Chain     string                                                     `protobuf:"bytes,4,opt,name=Chain,proto3" json:"Chain,omitempty"`
 	BlockNum  int64                                                      `protobuf:"varint,5,opt,name=BlockNum,proto3" json:"BlockNum,omitempty"`
-	BlockTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,6,opt,name=BlockTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"block_time" gorm:"type:datetime;"`
-	UpdateAt  bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	BlockTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,6,opt,name=BlockTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"block_time" gorm:"type:datetime;"`
+	UpdateAt  bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *BlockInfo) Reset()         { *m = BlockInfo{} }
@@ -2409,9 +2409,9 @@ type WalletInfo struct {
 	//钱包类型
 	WType WalletType `protobuf:"varint,5,opt,name=WType,proto3,enum=shared.api.WalletType" json:"wtype" gorm:"column:wtype;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WalletInfo) Reset()         { *m = WalletInfo{} }
@@ -2532,9 +2532,9 @@ type AddressInfo struct {
 	// 监听状态。0:未监听;1:已监听;2:已移除。
 	MonitorStatus int32 `protobuf:"varint,16,opt,name=MonitorStatus,proto3" json:"monitor_status"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *AddressInfo) Reset()         { *m = AddressInfo{} }
@@ -2752,9 +2752,9 @@ type CoinInfo struct {
 	//fee coin symbol
 	FeeSymbol string `protobuf:"bytes,37,opt,name=FeeSymbol,proto3" json:"fee_symbol" gorm:"size:16;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *CoinInfo) Reset()         { *m = CoinInfo{} }
@@ -3003,9 +3003,9 @@ type WalletHdIndex struct {
 	// 地址最后使用的序号
 	AddressIndexLast int32 `protobuf:"varint,4,opt,name=AddressIndexLast,proto3" json:"address_index_last" gorm:"index:IDX_AID_CID_INDEX"`
 	// 创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	// 最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WalletHdIndex) Reset()         { *m = WalletHdIndex{} }
@@ -3116,9 +3116,9 @@ type WalletCoin struct {
 	//是否可用,对账对不上时,禁止提现
 	IsActive bool `protobuf:"varint,18,opt,name=IsActive,proto3" json:"is_active"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WalletCoin) Reset()         { *m = WalletCoin{} }
@@ -3297,8 +3297,8 @@ type AddressAsset struct {
 	Address  string                                                     `protobuf:"bytes,6,opt,name=Address,proto3" json:"Address,omitempty"`
 	Memo     string                                                     `protobuf:"bytes,7,opt,name=Memo,proto3" json:"Memo,omitempty"`
 	Balance  float64                                                    `protobuf:"fixed64,8,opt,name=Balance,proto3" json:"balance" gorm:"type:decimal(34,10)"`
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,15,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"balance_update_at" gorm:"type:datetime"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,15,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"balance_update_at" gorm:"type:datetime"`
 }
 
 func (m *AddressAsset) Reset()         { *m = AddressAsset{} }
@@ -3419,9 +3419,9 @@ type WalletAsset struct {
 	//资产冻结金额
 	Freeze float64 `protobuf:"fixed64,7,opt,name=Freeze,proto3" json:"freeze" gorm:"type:decimal(34,10)"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WalletAsset) Reset()         { *m = WalletAsset{} }
@@ -3536,9 +3536,9 @@ type WalletAssetSnapshot struct {
 	//资产冻结金额
 	Freeze float64 `protobuf:"fixed64,7,opt,name=Freeze,proto3" json:"freeze" gorm:"type:decimal(34,10)"`
 	//资产最后更新时间
-	AssetUpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,8,opt,name=AssetUpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"asset_update_at" gorm:"type:datetime;"`
+	AssetUpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,8,opt,name=AssetUpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"asset_update_at" gorm:"type:datetime;"`
 	//快照时间
-	SnapshotAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=SnapshotAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"snapshot_at" gorm:"type:datetime;"`
+	SnapshotAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=SnapshotAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"snapshot_at" gorm:"type:datetime;"`
 }
 
 func (m *WalletAssetSnapshot) Reset()         { *m = WalletAssetSnapshot{} }
@@ -3653,9 +3653,9 @@ type WithdrawStat struct {
 	//最近一天提现金额累计
 	AmountPerDay float64 `protobuf:"fixed64,7,opt,name=AmountPerDay,proto3" json:"amount_per_day"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WithdrawStat) Reset()         { *m = WithdrawStat{} }
@@ -3783,9 +3783,9 @@ type Bill struct {
 	//备注
 	Comment string `protobuf:"bytes,17,opt,name=Comment,proto3" json:"comment" gorm:"size:255;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *Bill) Reset()         { *m = Bill{} }
@@ -3947,7 +3947,7 @@ type CoinTx struct {
 	//区块高度
 	BlockNum int64 `protobuf:"varint,6,opt,name=BlockNum,proto3" json:"block_num"`
 	//区块时间
-	BlockTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=BlockTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"block_time" gorm:"type:datetime;"`
+	BlockTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=BlockTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"block_time" gorm:"type:datetime;"`
 	//交易id
 	Txid string `protobuf:"bytes,8,opt,name=Txid,proto3" json:"txid" gorm:"size:255;"`
 	//tx转出地址
@@ -4005,9 +4005,9 @@ type CoinTx struct {
 	//需要的最小确认数
 	NeedConfirmedNum int32 `protobuf:"varint,44,opt,name=NeedConfirmedNum,proto3" json:"need_confirmed_num"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,54,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,54,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *CoinTx) Reset()         { *m = CoinTx{} }
@@ -4316,7 +4316,7 @@ type TxAction struct {
 	Result       int32                                                      `protobuf:"varint,11,opt,name=Result,proto3" json:"Result,omitempty"`
 	NeedNextAct  bool                                                       `protobuf:"varint,13,opt,name=NeedNextAct,proto3" json:"NeedNextAct,omitempty"`
 	Comment      string                                                     `protobuf:"bytes,12,opt,name=Comment,proto3" json:"Comment,omitempty"`
-	CreateAt     bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt     bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 }
 
 func (m *TxAction) Reset()         { *m = TxAction{} }
@@ -4467,9 +4467,9 @@ type WithdrawSetting struct {
 	//重试间隔 单位秒
 	RetryInv int64 `protobuf:"varint,11,opt,name=RetryInv,proto3" json:"retry_inv"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *WithdrawSetting) Reset()         { *m = WithdrawSetting{} }
@@ -4616,9 +4616,9 @@ type CoinWithdrawQuota struct {
 	//需要审核的人数
 	ApprovedPerson int32 `protobuf:"varint,9,opt,name=ApprovedPerson,proto3" json:"approved_person"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *CoinWithdrawQuota) Reset()         { *m = CoinWithdrawQuota{} }
@@ -4749,9 +4749,9 @@ type CoinWithdrawWhitelist struct {
 	//此设置的状态 1 未激活 2 已激活
 	State StateType `protobuf:"varint,8,opt,name=State,proto3,enum=shared.api.StateType" json:"state"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,20,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,21,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *CoinWithdrawWhitelist) Reset()         { *m = CoinWithdrawWhitelist{} }
@@ -5068,9 +5068,9 @@ type Message struct {
 	//备注
 	Commnet string `protobuf:"bytes,22,opt,name=Commnet,proto3" json:"commnet" gorm:"size:512;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *Message) Reset()         { *m = Message{} }
@@ -5226,9 +5226,9 @@ type Notify struct {
 	State   NotifyState `protobuf:"varint,3,opt,name=State,proto3,enum=shared.api.NotifyState" json:"state"`
 	Comment string      `protobuf:"bytes,4,opt,name=Comment,proto3" json:"comment" gorm:"size:512;"`
 	//创建时间
-	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
+	CreateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,50,opt,name=CreateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"create_at" gorm:"type:datetime;"`
 	//最后更新时间
-	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
+	UpdateAt bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,51,opt,name=UpdateAt,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"update_at" gorm:"type:datetime;"`
 }
 
 func (m *Notify) Reset()         { *m = Notify{} }

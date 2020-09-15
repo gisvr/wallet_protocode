@@ -4,9 +4,9 @@
 package pbasapi
 
 import (
-	bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time "bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time"
 	context "context"
 	fmt "fmt"
+	bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time "github.com/gisvr/wallet/src/lib/time"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
@@ -1420,7 +1420,7 @@ type ListConfirmedTxRequest struct {
 	MaxId     int64                                                      `protobuf:"varint,4,opt,name=max_id,json=maxId,proto3" json:",string"`
 	MinId     int64                                                      `protobuf:"varint,5,opt,name=min_id,json=minId,proto3" json:",string"`
 	Limit     int32                                                      `protobuf:"varint,6,opt,name=limit,proto3" json:"limit,omitempty"`
-	BeginTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=begin_time,json=beginTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"begin_time,omitempty"`
+	BeginTime bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,7,opt,name=begin_time,json=beginTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"begin_time,omitempty"`
 }
 
 func (m *ListConfirmedTxRequest) Reset()         { *m = ListConfirmedTxRequest{} }
@@ -2115,7 +2115,7 @@ type CollectCallbackRequest struct {
 	FeeCoin     string                                                     `protobuf:"bytes,11,opt,name=FeeCoin,proto3" json:"FeeCoin,omitempty"`
 	BlockHash   string                                                     `protobuf:"bytes,12,opt,name=BlockHash,proto3" json:"BlockHash,omitempty"`
 	BlockNum    int64                                                      `protobuf:"varint,13,opt,name=BlockNum,proto3" json:"BlockNum,omitempty"`
-	BlockTime   bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=BlockTime,proto3,casttype=bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/time.Time" json:"BlockTime,string" gorm:"type:datetime;"`
+	BlockTime   bitbucket_org_biiigle_biiigle_wa001_dams_src_lib_time.Time `protobuf:"varint,14,opt,name=BlockTime,proto3,casttype=github.com/gisvr/wallet/src/lib/time.Time" json:"BlockTime,string" gorm:"type:datetime;"`
 	Confirm     int32                                                      `protobuf:"varint,15,opt,name=Confirm,proto3" json:"Confirm,omitempty"`
 	Side        string                                                     `protobuf:"bytes,16,opt,name=Side,proto3" json:"Side,omitempty"`
 }

@@ -12,7 +12,7 @@ import (
 	"io"
 	"net/http"
 
-	"bitbucket.org/biiigle/biiigle_wa004_protocode/coinwallet-gogo"
+	"github.com/gisvr/wallet_protocode/coinwallet-gogo"
 	"github.com/golang/protobuf/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/utilities"

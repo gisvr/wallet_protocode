@@ -6,10 +6,10 @@ package pbwalletjob
 import (
 	"context"
 
-	bm "bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/net/http/blademaster"
-	"bitbucket.org/biiigle/biiigle_wa001_dams/src/lib/net/http/blademaster/binding"
+	bm "github.com/gisvr/wallet/src/lib/net/http/blademaster"
+	"github.com/gisvr/wallet/src/lib/net/http/blademaster/binding"
 )
-import coinwallet_api "bitbucket.org/biiigle/biiigle_wa004_protocode/coinwallet-gogo"
+import coinwallet_api "github.com/gisvr/wallet_protocode/coinwallet-gogo"
 
 // to suppressed 'imported but not used warning'
 var _ *bm.Context
