@@ -9,7 +9,7 @@ import (
 	bm "github.com/gisvr/golib/net/http/blademaster"
 	"github.com/gisvr/golib/net/http/blademaster/binding"
 )
-import coinwallet_api "github.com/gisvr/wallet_protocode/coinwallet-gogo"
+import coinwallet_api "github.com/gisvr/wallet_protorep/coinwallet-gogo"
 
 // to suppressed 'imported but not used warning'
 var _ *bm.Context
